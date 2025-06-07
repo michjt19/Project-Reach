@@ -1,3 +1,101 @@
-body {font-family: system-ui, sans-serif; margin: 0; padding: 0 1rem; line-height: 1.5;}
-header {text-align: center; margin: 2rem 0;}
-#disclaimer {background:#ffe4e4; padding:1rem; border-left:6px solid #ff5656;}
+/*
+  Purpose: Styling for Reach Collective site.
+  Inputs: HTML structure in index.html.
+  Outputs: Responsive layout and accessible color scheme.
+  Complexity: O(1) style application.
+*/
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.logo {
+  max-width: 120px;
+}
+
+h1,
+h2,
+h3 {
+  color: #39B54A;
+}
+
+a {
+  color: #39B54A;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2a8c3b;
+}
+
+.steps {
+  padding-left: 1.2rem;
+}
+
+#disclaimer {
+  background: #ffeaea;
+  padding: 1rem;
+  border-left: 4px solid #ff5656;
+  margin: 1rem 0;
+}
+
+#disclaimer summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resource-list li {
+  display: flex;
+  align-items: flex-start;
+  margin: 0.5rem 0;
+}
+
+.resource-list .icon {
+  margin-right: 0.5rem;
+}
+
+.start-chat {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #39B54A;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.start-chat:hover {
+  background: #2a8c3b;
+}
+
+footer {
+  text-align: center;
+  color: #666;
+  font-size: 0.875rem;
+  margin: 2rem 0;
+}
+
+footer a {
+  color: #39B54A;
+}
