@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reach – Peer Support</title>
+
+  <!-- favicon belongs in <head>, not inside <script> -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -18,20 +22,34 @@
 
     <section id="disclaimer">
       <strong>Disclaimer – Read First:</strong>
-      This is <em>peer support only</em>. We are not medical professionals.  
+      This is <em>peer support only</em>. We are not medical professionals.
       If you feel unsafe with your thoughts, call 988 or 911 immediately.
     </section>
 
     <section id="resources">
       <h3>Emergency & Helpful Links</h3>
       <ul>
-        <li><a href="tel:988">988 Suicide & Crisis Lifeline</a></li>
+        <li><a href="tel:988">988 Suicide &amp; Crisis Lifeline</a></li>
         <li>Text <b>HOME</b> to <b>741741</b> (Crisis Text Line)</li>
         <li><a href="https://findtreatment.gov" target="_blank">Find treatment near you</a></li>
       </ul>
     </section>
   </main>
 
-  <!-- Chatwoot widget will be injected here in STEP 5 -->
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.defer = true;                 // fine to keep
+      s1.src = 'https://embed.tawk.to/6843b2759ed8c2190a6d55fb/1it47275k';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
 </body>
 </html>
