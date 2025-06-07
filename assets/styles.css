@@ -18,6 +18,14 @@ body {
   padding: 0 1rem;
 }
 
+.box {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
 .site-header {
   text-align: center;
   padding: 2rem 1rem 1rem;
@@ -33,13 +41,9 @@ body {
   color: #555;
   letter-spacing: 0.5px;
   margin: 0.5rem 0;
+  font-size: 1.25rem;
 }
 
-.tagline {
-  font-weight: 300;
-  margin: 0 0 1rem;
-  color: #777;
-}
 
 h2,
 h3 {
@@ -56,9 +60,17 @@ a:hover {
   text-decoration: underline;
 }
 
-ol {
-  padding-left: 1.2rem;
+
+.steps {
+  list-style: none;
+  padding-left: 0;
   margin-bottom: 1.5rem;
+}
+
+.steps .icon {
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 
 details summary {
@@ -86,11 +98,13 @@ details[open] p {
 .resource-list li {
   display: flex;
   align-items: flex-start;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 
 .resource-list .icon {
   margin-right: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 
 footer {
