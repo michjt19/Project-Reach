@@ -1,3 +1,9 @@
+<!--
+  Purpose: Reach Collective landing page for peer support.
+  Inputs: User interaction via links and chat widget.
+  Outputs: Markup with embedded Tawk.to chat.
+  Complexity: O(1) static rendering.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,30 +17,50 @@
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Reach</h1>
-    <p>You don’t have to be in crisis to reach out.</p>
-  </header>
+  <div class="container">
+    <header>
+      <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo" />
+      <p class="welcome">Welcome. This is a quiet place to be heard.</p>
+      <p class="tagline">Reach Every At-risk Community with Human connection</p>
+    </header>
 
   <main>
     <h2>How this works</h2>
-    <p>Text our number or start a chat (bottom-right). A volunteer listener will answer as soon as possible.</p>
+    <ol class="steps">
+      <li>
+        Text our number at
+        <a href="sms:+18444740498">1-844-474-0498</a>
+        or open the chat below.
+      </li>
+      <li>You'll connect with a volunteer listener.</li>
+      <li>No pressure, just someone who cares.</li>
+    </ol>
 
-    <section id="disclaimer">
-      <strong>Disclaimer – Read First:</strong>
-      This is <em>peer support only</em>. We are not medical professionals.
-      If you feel unsafe with your thoughts, call 988 or 911 immediately.
-    </section>
+    <details id="disclaimer">
+      <summary>⚠︎ Read this before continuing</summary>
+      <p>
+        This is <em>peer support only</em>. We are not medical professionals.
+        If you feel unsafe with your thoughts, call 988 or 911 immediately.
+      </p>
+    </details>
 
     <section id="resources">
-      <h3>Emergency & Helpful Links</h3>
-      <ul>
-        <li><a href="tel:988">988 Suicide &amp; Crisis Lifeline</a></li>
-        <li>Text <b>HOME</b> to <b>741741</b> (Crisis Text Line)</li>
-        <li><a href="https://findtreatment.gov" target="_blank">Find treatment near you</a></li>
+      <h3>Emergency &amp; Helpful Links</h3>
+      <ul class="resource-list">
+        <li><span class="icon">📞</span><a href="tel:988">988 Suicide &amp; Crisis Lifeline</a></li>
+        <li><span class="icon">💬</span>Text <b>HOME</b> to <b>741741</b> (Crisis Text Line)</li>
+        <li><span class="icon">🌐</span><a href="https://findtreatment.gov" target="_blank">Find treatment near you</a></li>
       </ul>
     </section>
   </main>
+    <footer>
+      <p>
+        Peer support only • Volunteer-powered • Reach Collective 2025 |
+        <a href="terms.html">Terms</a> •
+        <a href="privacy.html">Privacy</a>
+      </p>
+    </footer>
+  </div>
 
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
@@ -51,5 +77,17 @@
     })();
   </script>
   <!--End of Tawk.to Script-->
+  <script>
+    Tawk_API = Tawk_API || {};
+    Tawk_API.onLoad = function () {
+      if (Tawk_API._autoOpened) return;
+      setTimeout(function () {
+        if (typeof Tawk_API.maximize === 'function' && !Tawk_API._autoOpened) {
+          Tawk_API.maximize();
+          Tawk_API._autoOpened = true;
+        }
+      }, 5000);
+    };
+  </script>
 </body>
 </html>
