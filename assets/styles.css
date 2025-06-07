@@ -50,6 +50,7 @@ body {
 h2,
 h3 {
   color: #2f5d50;
+  font-weight: 600;
 }
 
 a {
