@@ -17,11 +17,12 @@
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
+  <button id="chat-toggle" class="chat-toggle" aria-label="Open chat">Start Chat</button>
   <div class="container">
     <header>
       <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo" />
       <p class="welcome">Welcome. This is a quiet place to be heard.</p>
-      <p class="tagline">Reach Every At-risk Community with Human connection</p>
+      <p class="tagline">Every At-risk Community with Human connection</p>
     </header>
 
   <main>
@@ -86,8 +87,16 @@
           Tawk_API.maximize();
           Tawk_API._autoOpened = true;
         }
-      }, 5000);
+      }, 20000);
     };
+  var btn = document.getElementById("chat-toggle");
+  if (btn) {
+    btn.addEventListener("click", function () {
+      if (typeof Tawk_API.toggle === "function") {
+        Tawk_API.toggle();
+      }
+    });
+  }
   </script>
 </body>
 </html>

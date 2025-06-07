@@ -64,8 +64,8 @@ a:hover {
 }
 
 #disclaimer summary {
-  background: #fff9db;
-  border: 1px solid #fce79c;
+  background: #ffe4e4;
+  border-left: 4px solid #ff5656; border: 1px solid #ffe4e4;
   border-radius: 8px;
   padding: 0.75em;
   font-weight: 600;
@@ -79,8 +79,8 @@ a:hover {
 }
 
 #disclaimer p {
-  background: #fffef5;
-  border: 1px solid #fce79c;
+  background: #fff7f7;
+  border-left: 4px solid #ff5656; border: 1px solid #ffe4e4;
   border-top: none;
   border-radius: 0 0 8px 8px;
   padding: 0.75em;
@@ -113,3 +113,22 @@ footer {
 footer a {
   color: #39B54A;
 }
+
+.chat-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #39B54A;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.chat-toggle:hover {
+  background: #2a8c3b;
+}
+
