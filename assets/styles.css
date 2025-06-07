@@ -9,7 +9,7 @@ body {
   font-family: system-ui, sans-serif;
   margin: 0;
   line-height: 1.5;
-  background: linear-gradient(to bottom, #e8f5f2, #ffffff);
+  background: linear-gradient(to bottom, #eaf7f6, #ffffff);
 }
 
 .container {
@@ -18,14 +18,14 @@ body {
   padding: 0 1rem;
 }
 
-header {
+.site-header {
   text-align: center;
-  margin: 2rem 0;
+  padding: 2rem 1rem 1rem;
 }
 
 .logo {
   max-width: 200px;
-  margin: 1rem auto;
+  margin: 0 auto 1rem;
   display: block;
 }
 
@@ -38,9 +38,9 @@ header {
 .tagline {
   font-weight: 300;
   margin: 0 0 1rem;
+  color: #777;
 }
 
-h1,
 h2,
 h3 {
   color: #39B54A;
@@ -53,38 +53,29 @@ a {
 
 a:hover {
   color: #2a8c3b;
+  text-decoration: underline;
 }
 
-.steps {
+ol {
   padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
-#disclaimer {
-  margin: 1rem 0;
-}
-
-#disclaimer summary {
-  background: #ffe4e4;
-  border-left: 4px solid #ff5656; border: 1px solid #ffe4e4;
+details summary {
+  background-color: #fff9db;
+  border-left: 5px solid #f7c948;
   border-radius: 8px;
   padding: 0.75em;
   font-weight: 600;
   cursor: pointer;
-  list-style: none;
 }
 
-#disclaimer[open] summary {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-#disclaimer p {
-  background: #fff7f7;
-  border-left: 4px solid #ff5656; border: 1px solid #ffe4e4;
-  border-top: none;
-  border-radius: 0 0 8px 8px;
+details[open] p {
+  background-color: #fffde8;
   padding: 0.75em;
+  border-left: 5px solid #f7c948;
   margin: 0;
+  border-radius: 0 0 8px 8px;
 }
 
 .resource-list {
@@ -102,7 +93,6 @@ a:hover {
   margin-right: 0.5rem;
 }
 
-
 footer {
   text-align: center;
   color: #666;
@@ -114,21 +104,6 @@ footer a {
   color: #39B54A;
 }
 
-.chat-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: #39B54A;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  cursor: pointer;
-  z-index: 1000;
+footer a:hover {
+  text-decoration: underline;
 }
-
-.chat-toggle:hover {
-  background: #2a8c3b;
-}
-
