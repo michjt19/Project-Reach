@@ -11,12 +11,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reach – Peer Support</title>
 
+  <!-- Normalize CSS reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+  <!-- Tailwind CSS CDN and DaisyUI plugin setup -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { primary: '#39B54A' } } },
+      plugins: [daisyui]
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.js"></script>
+
+  <!-- Google Fonts: Inter and Merriweather -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@700&amp;display=swap" rel="stylesheet" />
+
+  <!-- Heroicons SVG sprite -->
+  <script src="https://unpkg.com/heroicons@2.0.13/dist/umd/heroicons.min.js"></script>
+
+  <!-- Lottie Web animations -->
+  <script src="https://unpkg.com/lottie-web@5.10.1/build/player/lottie.min.js"></script>
+
+  <!-- Alpine.js for interactivity -->
+  <script defer="defer" src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- AOS animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
+
+  <!-- Focus-Visible polyfill -->
+  <script src="https://unpkg.com/focus-visible@5.2.0/dist/focus-visible.min.js"></script>
+
   <!-- favicon belongs in <head> -->
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body>
+<body class="bg-gradient-to-b from-[#eaf7f6] to-white scroll-smooth font-sans text-gray-800">
   <div class="container">
     <header class="site-header">
       <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo" />
@@ -38,7 +71,7 @@
       </details>
 
       <section id="resources">
-        <h3>Emergency & Helpful Links</h3>
+        <h3>Emergency &amp; Helpful Links</h3>
         <ul class="resource-list">
           <li><span class="icon">📞</span><a href="tel:988">988 Suicide &amp; Crisis Lifeline</a></li>
           <li><span class="icon">💬</span>Text <strong>HOME</strong> to <strong>741741</strong> (Crisis Text Line)</li>
@@ -54,6 +87,7 @@
 
   <!-- Tawk.to Chat Widget -->
   <script type="text/javascript">
+    <![CDATA[
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
       var s1 = document.createElement("script"),
@@ -73,6 +107,7 @@
         }
       }, 5000);
     };
+    ]]>
   </script>
 </body>
 </html>
