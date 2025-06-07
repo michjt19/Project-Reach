@@ -76,6 +76,17 @@ a:hover {
   line-height: 1.25rem;
 }
 
+.steps-list p {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.steps-list p strong {
+  color: #2f5d50;
+  margin-right: 0.25rem;
+}
+
 details summary {
   background-color: #fff9db;
   border-left: 5px solid #f7c948;
