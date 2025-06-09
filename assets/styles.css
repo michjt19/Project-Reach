@@ -10,6 +10,7 @@ body {
   margin: 0;
   line-height: 1.5;
   background: linear-gradient(to bottom, #eaf7f6, #ffffff);
+  color: #333;
 }
 
 .container {
@@ -32,9 +33,7 @@ body {
 }
 
 .logo {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+  max-width: 200px;
   margin: 0 auto 1rem;
   display: block;
 }
@@ -46,11 +45,9 @@ body {
   font-size: 1.25rem;
 }
 
-
 h2,
 h3 {
-  color: #36454f;
-  font-weight: 600;
+  color: #39B54A;
 }
 
 a {
@@ -63,69 +60,10 @@ a:hover {
   text-decoration: underline;
 }
 
-.main-nav {
-  border-top: 1px solid #e0e0e0;
-  margin-top: 1.25rem;
-  padding-top: 0.75rem;
-  text-align: center;
-}
-
-.main-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.main-nav li {
-  display: inline-block;
-  margin: 0 1rem;
-}
-
-.main-nav a {
-  font-weight: 500;
-  color: #39B54A;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.main-nav a:hover {
-  text-decoration: underline;
-  color: #2a8c3b;
-}
-
-.disclaimer-banner {
-  background-color: #fff9db;
-  color: #5c4b00;
-  border-left: 5px solid #f7c948;
-  padding: 1rem;
-  margin: 1.5rem 0;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
 .steps {
   list-style: none;
   padding-left: 0;
   margin-bottom: 1.5rem;
-}
-
-.steps .icon {
-  margin-right: 0.5rem;
-  font-size: 1.25rem;
-  line-height: 1.25rem;
-}
-
-.steps-list p {
-  margin-bottom: 0.75rem;
-  font-size: 1.05rem;
-  color: #333;
-}
-
-.steps-list p strong {
-  color: #2f5d50;
-  margin-right: 0.25rem;
 }
 
 .step-badge {
@@ -140,6 +78,12 @@ a:hover {
   border-radius: 50%;
   text-align: center;
   margin-right: 0.75rem;
+}
+
+.steps .icon {
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 
 details summary {
@@ -157,6 +101,18 @@ details[open] p {
   border-left: 5px solid #f7c948;
   margin: 0;
   border-radius: 0 0 8px 8px;
+}
+
+.disclaimer-banner {
+  background-color: #fff9db;
+  color: #5c4b00;
+  border-left: 5px solid #f7c948;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .resource-list {
@@ -189,4 +145,129 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* === NAVIGATION BAR === */
+
+.nav-bar {
+  background-color: #222;
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 0;
+}
+
+.nav-container {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.nav-logo {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-menu li a,
+.has-dropdown > button {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-menu li a:hover,
+.has-dropdown > button:hover {
+  color: #f7c948;
+}
+
+/* Mobile menu toggle */
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #222;
+    padding: 1rem;
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  body.nav-open .nav-menu {
+    display: flex;
+  }
+
+  .nav-container {
+    flex-wrap: wrap;
+  }
+}
+
+/* Dropdown styles */
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  background-color: #333;
+  border-radius: 4px;
+  display: none;
+  flex-direction: column;
+  min-width: 160px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dropdown li a {
+  color: white;
+  padding: 0.75rem 1rem;
+  display: block;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown li a:hover {
+  background-color: #444;
+}
+
+@media (min-width: 601px) {
+  .has-dropdown:hover .dropdown {
+    display: flex;
+  }
+}
+
+.dropdown.open {
+  display: flex;
 }
