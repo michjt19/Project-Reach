@@ -52,14 +52,18 @@
     </header>
 
     <!-- Navigation Bar -->
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="volunteer.html">Volunteer</a></li>
-        <li><a href="terms.html">Terms</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-      </ul>
-    </nav>
+    <nav class="nav-bar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">REACH</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="volunteer.html">Volunteer</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
 
     <!-- Always-visible Disclaimer -->
     <div class="disclaimer-banner" role="alert" aria-label="Peer support disclaimer">
