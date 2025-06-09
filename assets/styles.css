@@ -63,6 +63,47 @@ a:hover {
   text-decoration: underline;
 }
 
+.main-nav {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  text-align: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.main-nav a {
+  font-weight: 500;
+  color: #39B54A;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+  color: #2a8c3b;
+}
+
+.disclaimer-banner {
+  background-color: #fff9db;
+  color: #5c4b00;
+  border-left: 5px solid #f7c948;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  font-weight: 500;
+  line-height: 1.5;
+}
 
 .steps {
   list-style: none;
