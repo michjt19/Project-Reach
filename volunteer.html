@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volunteer – Reach Collective</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">REACH</a>
+      <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <button onclick="toggleDropdown()">Volunteer ▾</button>
+          <ul class="dropdown" id="volunteerDropdown">
+            <li><a href="volunteer.html">Sign Up</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+          </ul>
+        </li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="site-header">
+      <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo" />
+      <p class="welcome">Volunteer Sign-Up</p>
+    </header>
+
+    <main class="box">
+      <p>Interested in becoming a volunteer listener? Fill out the form below (coming soon) and we’ll reach out with next steps.</p>
+    </main>
+
+    <footer>
+      <p>Peer support only • Volunteer-powered • Reach Collective 2025 | <a href="terms.html">Terms</a> • <a href="privacy.html">Privacy</a></p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById("volunteerDropdown").classList.toggle("open");
+    }
+
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".has-dropdown")) {
+        document.getElementById("volunteerDropdown")?.classList.remove("open");
+      }
+    });
+  </script>
+</body>
+</html>
