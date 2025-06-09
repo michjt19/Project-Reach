@@ -1,9 +1,3 @@
-<!--
-  Purpose: Reach Collective landing page for peer support.
-  Inputs: User interaction via links and chat widget.
-  Outputs: Markup with embedded Tawk.to chat.
-  Complexity: O(1) static rendering.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,33 +13,35 @@
   <script>
     tailwind.config = {
       theme: { extend: { colors: { primary: '#39B54A' } } },
+      plugins: [daisyui]
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.js"></script>
-  
-  <!-- Google Fonts: Inter and Merriweather -->
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@700&amp;display=swap" rel="stylesheet" />
 
-  <!-- Heroicons SVG sprite -->
+  <!-- Heroicons -->
   <script src="https://unpkg.com/heroicons@2.0.13/dist/umd/heroicons.min.js"></script>
 
-  <!-- Lottie Web animations -->
+  <!-- Lottie Animations -->
   <script src="https://unpkg.com/lottie-web@5.10.1/build/player/lottie.min.js"></script>
 
-  <!-- Alpine.js for interactivity -->
-  <script defer="defer" src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-  <!-- AOS animations -->
+  <!-- AOS (Animate on Scroll) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init({ once: true });</script>
 
-  <!-- Focus-Visible polyfill -->
+  <!-- Focus-Visible Polyfill -->
   <script src="https://unpkg.com/focus-visible@5.2.0/dist/focus-visible.min.js"></script>
 
-  <!-- favicon belongs in <head> -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body class="bg-gradient-to-b from-[#eaf7f6] to-white scroll-smooth font-sans text-gray-800">
@@ -55,20 +51,31 @@
       <p class="welcome">Welcome. This is a quiet place to be heard.</p>
     </header>
 
-    <main>
-      <section class="box" id="how-it-works">
-  <h2>How this works</h2>
-  <ul class="steps">
-  <li><span class="step-badge">1</span>Text our number at <a href="sms:+18444740498">1-844-474-0498</a> or open the chat below.</li>
-  <li><span class="step-badge">2</span>You'll connect with a volunteer listener.</li>
-  <li><span class="step-badge">3</span>No pressure — just someone who cares.</li>
-</ul>
-</section>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
 
-      <details id="disclaimer">
-        <summary>⚠︎ Read this before continuing</summary>
-        <p>This is <em>peer support only</em>. We are not medical professionals. If you feel unsafe with your thoughts, call 988 or 911 immediately.</p>
-      </details>
+    <!-- Always-visible Disclaimer -->
+    <div class="disclaimer-banner" role="alert" aria-label="Peer support disclaimer">
+      ⚠︎ This is <strong>peer support only</strong>. We are not medical professionals.
+      If you feel unsafe with your thoughts, call <a href="tel:988">988</a> or <a href="tel:911">911</a> immediately.
+    </div>
+
+    <main>
+      <div class="box" id="how-it-works">
+        <h2>How this works</h2>
+        <ul class="steps">
+          <li><span class="step-badge">1</span>Text our number at <a href="sms:+18444740498">1-844-474-0498</a> or open the chat below.</li>
+          <li><span class="step-badge">2</span>You'll connect with a volunteer listener.</li>
+          <li><span class="step-badge">3</span>No pressure — just someone who cares.</li>
+        </ul>
+      </div>
 
       <section id="resources" class="box">
         <h3>Emergency &amp; Helpful Links</h3>
@@ -81,21 +88,24 @@
     </main>
 
     <footer>
-      <p>Peer support only • Volunteer-powered • Project Reach 2025 | <a href="terms.html">Terms</a> • <a href="privacy.html">Privacy</a></p>
+      <p>Peer support only • Volunteer-powered • Reach Collective 2025 | <a href="terms.html">Terms</a> • <a href="privacy.html">Privacy</a></p>
     </footer>
   </div>
-  <!-- Start of Tawk.to Script -->
-<script type="text/javascript">
-  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-  (function () {
-    var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/6843b2759ed8c2190a6d55fb/1it47275k';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-  })();
+
+  <!-- Tawk.to Chat Widget -->
+  <script type="text/javascript">
+    <![CDATA[
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.defer = true;
+      s1.src = 'https://embed.tawk.to/6843b2759ed8c2190a6d55fb/1it47275k';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
     Tawk_API.onLoad = function () {
       setTimeout(function () {
         if (!window.__TawkOpenedOnce && typeof Tawk_API.maximize === 'function') {
@@ -104,7 +114,7 @@
         }
       }, 5000);
     };
+    ]]>
   </script>
-  <!-- End of Tawk.to Script -->
 </body>
 </html>
