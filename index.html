@@ -5,70 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reach – Peer Support</title>
 
-  <!-- Normalize CSS reset -->
+  <!-- Normalize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 
-  <!-- Tailwind CSS CDN and DaisyUI plugin setup -->
+  <!-- Tailwind (optional plugin) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: { extend: { colors: { primary: '#39B54A' } } },
-      plugins: [daisyui]
-    }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.js"></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@700&amp;display=swap" rel="stylesheet" />
-
-  <!-- Heroicons -->
-  <script src="https://unpkg.com/heroicons@2.0.13/dist/umd/heroicons.min.js"></script>
-
-  <!-- Lottie Animations -->
-  <script src="https://unpkg.com/lottie-web@5.10.1/build/player/lottie.min.js"></script>
-
-  <!-- Alpine.js -->
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-  <!-- AOS (Animate on Scroll) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ once: true });</script>
-
-  <!-- Focus-Visible Polyfill -->
-  <script src="https://unpkg.com/focus-visible@5.2.0/dist/focus-visible.min.js"></script>
-
-  <!-- Favicon -->
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-  <!-- Custom Styles -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body class="bg-gradient-to-b from-[#eaf7f6] to-white scroll-smooth font-sans text-gray-800">
+
+  <!-- NAV BAR -->
+  <nav class="nav-bar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">REACH</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <button onclick="toggleDropdown()" aria-haspopup="true" aria-expanded="false">
+            Volunteer ▾
+          </button>
+          <ul class="dropdown" id="volunteerDropdown">
+            <li><a href="volunteer.html">Sign Up</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+          </ul>
+        </li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="container">
     <header class="site-header">
       <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo" />
       <p class="welcome">Welcome. This is a quiet place to be heard.</p>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav class="nav-bar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">REACH</a>
-    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="volunteer.html">Volunteer</a></li>
-      <li><a href="terms.html">Terms</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-    </ul>
-  </div>
-</nav>
-
-    <!-- Always-visible Disclaimer -->
     <div class="disclaimer-banner" role="alert" aria-label="Peer support disclaimer">
-      ⚠︎ This is <strong>peer support only</strong>. We are not medical professionals.
-      If you feel unsafe with your thoughts, call <a href="tel:988">988</a> or <a href="tel:911">911</a> immediately.
+      ⚠︎ This is <strong>peer support only</strong>. We are not medical professionals. If you feel unsafe with your thoughts, call <a href="tel:988">988</a> or <a href="tel:911">911</a> immediately.
     </div>
 
     <main>
@@ -98,27 +80,31 @@
 
   <!-- Tawk.to Chat Widget -->
   <script type="text/javascript">
-    <![CDATA[
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
       var s1 = document.createElement("script"),
           s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
-      s1.defer = true;
       s1.src = 'https://embed.tawk.to/6843b2759ed8c2190a6d55fb/1it47275k';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
     })();
-    Tawk_API.onLoad = function () {
-      setTimeout(function () {
-        if (!window.__TawkOpenedOnce && typeof Tawk_API.maximize === 'function') {
-          Tawk_API.maximize();
-          window.__TawkOpenedOnce = true;
-        }
-      }, 5000);
-    };
-    ]]>
+  </script>
+
+  <!-- Dropdown Script -->
+  <script>
+    function toggleDropdown() {
+      const menu = document.getElementById("volunteerDropdown");
+      const isOpen = menu.classList.contains("open");
+      menu.classList.toggle("open", !isOpen);
+    }
+
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".has-dropdown")) {
+        document.getElementById("volunteerDropdown")?.classList.remove("open");
+      }
+    });
   </script>
 </body>
 </html>
