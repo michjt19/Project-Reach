@@ -22,7 +22,25 @@
     </header>
 
     <main class="box">
-      <p>Interested in becoming a volunteer listener? Fill out the form below (coming soon) and we’ll reach out with next steps.</p>
+      <h2>Volunteer Sign-Up</h2>
+      <form id="volunteerForm">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required="required" />
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required="required" />
+
+        <label for="why">Why do you want to volunteer? *</label>
+        <textarea id="why" name="message" rows="5" required="required"></textarea>
+
+        <label>
+          <input type="checkbox" name="consent" required="required" />
+          I agree to the <a href="code-of-conduct.html" target="_blank">Code of Conduct</a> *
+        </label>
+
+        <button type="submit">Submit Application</button>
+        <p id="formStatus" class="form-status"></p>
+      </form>
     </main>
 
   </div>
@@ -42,6 +60,36 @@
 <script>
 fetch('assets/partials/header.html').then(r => r.text()).then(html => document.getElementById('header').innerHTML = html);
 fetch('assets/partials/footer.html').then(r => r.text()).then(html => document.getElementById('footer').innerHTML = html);
+</script>
+<script>
+  const form = document.getElementById("volunteerForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const endpoint = "https://formspree.io/f/mnnvplrw";
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+
+      if (response.ok) {
+        status.textContent = "✅ Thank you! We’ll review your submission shortly.";
+        status.style.color = "green";
+        form.reset();
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      status.textContent = "⚠️ Something went wrong. Please try again later.";
+      status.style.color = "darkred";
+    }
+  });
 </script>
 </body>
 </html>
