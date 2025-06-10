@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project Reach – Peer-support resources for emotional well-being" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha384-..." crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>About Us – Project Reach</title>
+</head>
+
+<body class="bg-gradient-to-b from-[#eaf7f6] to-white font-sans text-gray-800">
+<div id="header"></div>
+
+  <div class="container">
+    <header class="site-header">
+      <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo" />
+      <p class="welcome">About Us</p>
+    </header>
+
+    <main class="box">
+      <h2>What Is Project Reach?</h2>
+      <p>
+        Project Reach was created for one reason: to make sure no one feels
+        alone in their hardest moments.
+      </p>
+      <p>
+        In a world flooded with apps, forms, and waitlists, real connection has
+        become hard to find—especially for those who aren’t in a full-blown
+        crisis, but are still hurting. Project Reach fills that gap. We offer
+        instant, human support from trained peers who simply listen, care, and
+        sit with you in whatever you’re facing—without judgment, diagnosis, or
+        red tape.
+      </p>
+
+      <h3>Why It Matters</h3>
+      <p>Too many people fall between the cracks of the mental health system:</p>
+      <ul>
+        <li>They’re told they’re “not in crisis enough” for help.</li>
+        <li>They’re overwhelmed by complicated sign-ups and intake forms.</li>
+        <li>Or they just want someone who understands, not a clinical chart.</li>
+      </ul>
+      <p>Project Reach was built for those people.</p>
+      <p>
+        Whether you’re texting at 2 a.m. because you’re spiraling quietly, or
+        just need to hear that you matter—we’re here. No accounts. No labels.
+        Just presence.
+      </p>
+
+      <h3>What Makes It Different?</h3>
+      <ul>
+        <li>No diagnosis required</li>
+        <li>No waitlists</li>
+        <li>No judgment</li>
+        <li>
+          Just a real person, trained to support, listen, and remind you that
+          you’re not alone.
+        </li>
+      </ul>
+      <p>
+        We believe emotional care should be as easy as sending a message—and
+        that support shouldn’t start only when things hit rock bottom.
+      </p>
+
+      <h3>The Gap We’re Filling</h3>
+      <p>The mental health world has professionals. The crisis world has hotlines.</p>
+      <p>
+        But the middle space—the “I’m not okay, but I don’t know what to do”—is
+        often empty. That’s where we show up. We’re here to reach you—with
+        empathy, presence, and heart.
+      </p>
+    </main>
+
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById("volunteerDropdown").classList.toggle("open");
+    }
+
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".has-dropdown")) {
+        document.getElementById("volunteerDropdown")?.classList.remove("open");
+      }
+    });
+  </script>
+<div id="footer"></div>
+<script>
+fetch('assets/partials/header.html').then(r => r.text()).then(html => document.getElementById('header').innerHTML = html);
+fetch('assets/partials/footer.html').then(r => r.text()).then(html => document.getElementById('footer').innerHTML = html);
+</script>
+</body>
+</html>
