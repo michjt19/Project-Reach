@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Project Reach – Peer-support resources for emotional well-being" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha384-..." crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/favicon.png" />
   <link rel="stylesheet" href="assets/styles.css" />
@@ -14,33 +14,33 @@
 <body class="bg-gradient-to-b from-[#eaf7f6] to-white font-sans text-gray-800">
   <div id="header"></div>
 
-  <div class="container mx-auto p-4">
-    <header class="site-header flex flex-col items-center mb-8">
-      <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo mb-4" />
-      <p class="welcome text-xl font-semibold">Volunteer Sign-Up</p>
+  <div class="container mx-auto p-6 max-w-lg">
+    <header class="site-header text-center mb-8">
+      <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo mx-auto mb-4" />
+      <h1 class="text-2xl font-bold">Volunteer Sign-Up</h1>
+      <p class="text-gray-600">Join us in making a difference. Fill out the form below to volunteer.</p>
     </header>
 
-    <main class="box max-w-lg mx-auto bg-white p-6 rounded shadow">
-      <h2 class="text-2xl font-bold mb-6 text-center">Volunteer Sign-Up</h2>
-      <form id="volunteerForm" class="space-y-4">
+    <main class="box bg-white p-6 rounded-lg shadow">
+      <form id="volunteerForm" class="space-y-5">
         <!-- Full Name Field -->
         <div>
-          <label for="name" class="block text-gray-700 font-medium mb-1">Full Name *</label>
-          <input type="text" id="name" name="name" required class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500" />
+          <label for="name" class="block text-gray-700 font-semibold">Full Name *</label>
+          <input type="text" id="name" name="name" required aria-label="Full Name" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
 
         <!-- Email Address Field -->
         <div>
-          <label for="email" class="block text-gray-700 font-medium mb-1">Email Address *</label>
-          <input type="email" id="email" name="email" required class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500" />
+          <label for="email" class="block text-gray-700 font-semibold">Email Address *</label>
+          <input type="email" id="email" name="email" required aria-label="Email Address" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
-      
+
         <!-- Volunteer Motivation Textarea -->
         <div>
-          <label for="why" class="block text-gray-700 font-medium mb-1">Why do you want to volunteer? *</label>
-          <textarea id="why" name="message" rows="5" required class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"></textarea>
+          <label for="why" class="block text-gray-700 font-semibold">Why do you want to volunteer? *</label>
+          <textarea id="why" name="message" rows="5" required aria-label="Motivation for Volunteering" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
         </div>
-        
+
         <!-- Consent Checkbox -->
         <div class="flex items-center">
           <input type="checkbox" id="consent" name="consent" required class="mr-2" />
@@ -51,42 +51,22 @@
 
         <!-- Submit Button -->
         <div>
-          <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white p-2 rounded font-medium">Submit</button>
+          <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded text-lg font-semibold">Submit</button>
         </div>
-        
-        <p id="formStatus" class="form-status text-center"></p>
+
+        <p id="formStatus" class="form-status text-center text-gray-700 mt-4"></p>
       </form>
     </main>
   </div>
 
-  <script>
-    function toggleDropdown() {
-      document.getElementById("volunteerDropdown").classList.toggle("open");
-    }
-
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".has-dropdown")) {
-        document.getElementById("volunteerDropdown")?.classList.remove("open");
-      }
-    });
-  </script>
-  
-  <div id="footer"></div>
-  <script>
-    fetch('assets/partials/header.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('header').innerHTML = html);
-    fetch('assets/partials/footer.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('footer').innerHTML = html);
-  </script>
-  
   <script>
     const form = document.getElementById("volunteerForm");
     const status = document.getElementById("formStatus");
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      status.textContent = "Submitting...";
+      status.style.color = "gray";
 
       const data = new FormData(form);
       const endpoint = "https://formspree.io/f/mnnvplrw";
@@ -99,7 +79,7 @@
         });
 
         if (response.ok) {
-          status.textContent = "✅ Thank you! We’ll review your submission shortly.";
+          status.textContent = "✅ Thank you for signing up! We'll be in touch soon.";
           status.style.color = "green";
           form.reset();
         } else {
@@ -110,6 +90,12 @@
         status.style.color = "darkred";
       }
     });
+  </script>
+
+  <div id="footer"></div>
+  <script>
+    fetch('assets/partials/header.html').then(r => r.text()).then(html => document.getElementById('header').innerHTML = html);
+    fetch('assets/partials/footer.html').then(r => r.text()).then(html => document.getElementById('footer').innerHTML = html);
   </script>
 </body>
 </html>
