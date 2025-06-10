@@ -262,6 +262,38 @@ footer a:hover {
   background-color: #444;
 }
 
+.footer-extended {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+}
+
+.footer-extended .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-extended .footer-links a {
+  color: #39B54A;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-extended .footer-links a:hover {
+  text-decoration: underline;
+  color: #2a8c3b;
+}
+
+.footer-extended .footer-note {
+  margin-top: 0.5rem;
+}
+
 @media (min-width: 601px) {
   .has-dropdown:hover .dropdown {
     display: flex;
