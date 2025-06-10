@@ -1,33 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reach – Terms of Service</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Project Reach – Peer-support resources for emotional well-being" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha384-..." crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="assets/favicon.ico" />
+<link rel="stylesheet" href="assets/styles.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Reach – Terms of Service</title>
 </head>
-<body class="bg-gradient-to-b from-[#eaf7f6] to-white font-sans text-gray-800">
 
-  <!-- NAV BAR -->
-  <nav class="nav-bar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">REACH</a>
-      <button class="nav-toggle" onclick="document.body.classList.toggle('nav-open')">☰</button>
-      <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li class="has-dropdown">
-          <button onclick="toggleDropdown()">Volunteer ▾</button>
-          <ul class="dropdown" id="volunteerDropdown">
-            <li><a href="volunteer.html">Sign Up</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="code-of-conduct.html">Code of Conduct</a></li>
-          </ul>
-        </li>
-        <li><a href="terms.html">Terms</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-      </ul>
-    </div>
-  </nav>
+<body class="bg-gradient-to-b from-[#eaf7f6] to-white font-sans text-gray-800">
+<div id="header"></div>
+
 
   <div class="container">
     <header class="site-header">
@@ -94,12 +81,6 @@
       </p>
     </main>
 
-    <footer>
-      <p>
-        Peer support only • Volunteer-powered • Reach Collective 2025 |
-        <a href="terms.html">Terms</a> • <a href="privacy.html">Privacy</a>
-      </p>
-    </footer>
   </div>
 
   <!-- Dropdown Script -->
@@ -113,5 +94,10 @@
       }
     });
   </script>
+<div id="footer"></div>
+<script>
+fetch('assets/partials/header.html').then(r => r.text()).then(html => document.getElementById('header').innerHTML = html);
+fetch('assets/partials/footer.html').then(r => r.text()).then(html => document.getElementById('footer').innerHTML = html);
+</script>
 </body>
 </html>
