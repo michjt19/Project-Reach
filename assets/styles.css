@@ -310,7 +310,7 @@ footer a:hover {
 
 .hero {
   position: relative;
-  min-height: 75vh;
+  padding: 4rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
