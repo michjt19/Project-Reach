@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Project Reach – Peer-support resources for emotional well-being" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha384-..." crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
-<link rel="icon" href="assets/favicon.png" />
-<link rel="stylesheet" href="assets/styles.css" />
-<script src="https://cdn.tailwindcss.com"></script>
-<title>Volunteer – Reach Collective</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project Reach – Peer-support resources for emotional well-being" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha384-..." crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Volunteer – Reach Collective</title>
 </head>
-
 <body class="bg-gradient-to-b from-[#eaf7f6] to-white font-sans text-gray-800">
-<div id="header"></div>
+  <div id="header"></div>
 
-  <div class="container">
-    <header class="site-header">
-      <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo" />
-      <p class="welcome">Volunteer Sign-Up</p>
+  <div class="container mx-auto p-4">
+    <header class="site-header flex flex-col items-center mb-8">
+      <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo mb-4" />
+      <p class="welcome text-xl font-semibold">Volunteer Sign-Up</p>
     </header>
 
-    <main class="box">
-      <h2>Volunteer Sign-Up</h2>
-      <form id="volunteerForm">
-        <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" required="required" />
+    <main class="box max-w-lg mx-auto bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-bold mb-6 text-center">Volunteer Sign-Up</h2>
+      <form id="volunteerForm" class="space-y-4">
+        <!-- Full Name Field -->
+        <div>
+          <label for="name" class="block text-gray-700 font-medium mb-1">Full Name *</label>
+          <input type="text" id="name" name="name" required class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500" />
+        </div>
 
-        <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" required="required" />
+        <!-- Email Address Field -->
+        <div>
+          <label for="email" class="block text-gray-700 font-medium mb-1">Email Address *</label>
+          <input type="email" id="email" name="email" required class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500" />
+        </div>
+      
+        <!-- Volunteer Motivation Textarea -->
+        <div>
+          <label for="why" class="block text-gray-700 font-medium mb-1">Why do you want to volunteer? *</label>
+          <textarea id="why" name="message" rows="5" required class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"></textarea>
+        </div>
+        
+        <!-- Consent Checkbox -->
+        <div class="flex items-center">
+          <input type="checkbox" id="consent" name="consent" required class="mr-2" />
+          <label for="consent" class="text-gray-700">
+            I agree to the <a href="code-of-conduct.html" target="_blank" class="text-blue-500 underline">Code of Conduct</a> *
+          </label>
+        </div>
 
-        <label for="why">Why do you want to volunteer? *</label>
-        <textarea id="why" name="message" rows="5" required="required"></textarea>
-
-        <label>
-          <input type="checkbox" name="consent" required="required" />
-          I agree to the <a href="code-of-conduct.html" target="_blank">Code of Conduct</a> *
-        </label>
-
-        <button type="submit">Submit Application</button>
-        <p id="formStatus" class="form-status"></p>
+        <!-- Submit Button -->
+        <div>
+          <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white p-2 rounded font-medium">Submit</button>
+        </div>
+        
+        <p id="formStatus" class="form-status text-center"></p>
       </form>
     </main>
-
   </div>
 
   <script>
@@ -56,40 +70,46 @@
       }
     });
   </script>
-<div id="footer"></div>
-<script>
-fetch('assets/partials/header.html').then(r => r.text()).then(html => document.getElementById('header').innerHTML = html);
-fetch('assets/partials/footer.html').then(r => r.text()).then(html => document.getElementById('footer').innerHTML = html);
-</script>
-<script>
-  const form = document.getElementById("volunteerForm");
-  const status = document.getElementById("formStatus");
+  
+  <div id="footer"></div>
+  <script>
+    fetch('assets/partials/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('header').innerHTML = html);
+    fetch('assets/partials/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('footer').innerHTML = html);
+  </script>
+  
+  <script>
+    const form = document.getElementById("volunteerForm");
+    const status = document.getElementById("formStatus");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    const data = new FormData(form);
-    const endpoint = "https://formspree.io/f/mnnvplrw";
+      const data = new FormData(form);
+      const endpoint = "https://formspree.io/f/mnnvplrw";
 
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: data,
-      });
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: data,
+        });
 
-      if (response.ok) {
-        status.textContent = "✅ Thank you! We’ll review your submission shortly.";
-        status.style.color = "green";
-        form.reset();
-      } else {
-        throw new Error("Submission failed");
+        if (response.ok) {
+          status.textContent = "✅ Thank you! We’ll review your submission shortly.";
+          status.style.color = "green";
+          form.reset();
+        } else {
+          throw new Error("Submission failed");
+        }
+      } catch (error) {
+        status.textContent = "⚠️ Something went wrong. Please try again later.";
+        status.style.color = "darkred";
       }
-    } catch (error) {
-      status.textContent = "⚠️ Something went wrong. Please try again later.";
-      status.style.color = "darkred";
-    }
-  });
-</script>
+    });
+  </script>
 </body>
 </html>
