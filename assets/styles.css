@@ -104,15 +104,18 @@ details[open] p {
 }
 
 .disclaimer-banner {
-  background-color: #fff9db;
-  color: #5c4b00;
-  border-left: 5px solid #f7c948;
-  padding: 1rem;
-  margin: 1.5rem 0;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  font-weight: 500;
-  line-height: 1.5;
+    background-color: #fff9db;
+    color: #5c4b00;
+    border-left: 5px solid #f7c948;
+    padding: 1rem;
+    margin: 1.5rem auto; /* Centers the banner */
+    font-size: 0.95rem;
+    border-radius: 8px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: block; /* Ensures margin works for centering */
+    width: fit-content; /* Adjusts width to fit content */
+    text-align: center; /* Centers text inside the banner */
 }
 
 .resource-list {
