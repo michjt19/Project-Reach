@@ -199,6 +199,22 @@ footer a:hover {
   cursor: pointer;
 }
 
+/* theme toggle button next to menu */
+/* background none to blend with nav bar */
+/* margin-left gives spacing from menu */
+button#themeToggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+html.dark button#themeToggle {
+  color: #f7c948;
+}
+
 .nav-menu li a:hover,
 .has-dropdown > button:hover {
   color: #f7c948;
@@ -354,4 +370,32 @@ footer a:hover {
   margin-top: 1rem;
   font-weight: 500;
   font-size: 1rem;
+}
+
+/* Dark mode styles */
+html.dark body {
+  background: #1a202c;
+  color: #f7fafc;
+}
+
+html.dark .box {
+  background-color: #2d3748;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+html.dark a {
+  color: #9ae6b4;
+}
+
+html.dark a:hover {
+  color: #68d391;
+}
+
+html.dark .nav-bar {
+  background-color: #000;
+}
+
+html.dark .footer-extended {
+  color: #cbd5e0;
+  border-top-color: #2d3748;
 }

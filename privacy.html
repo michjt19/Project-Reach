@@ -102,9 +102,19 @@
     });
   </script>
 <div id="footer"></div>
+<script src="scripts/dark_mode.js"></script>
 <script>
-fetch('assets/partials/header.html').then(r => r.text()).then(html => document.getElementById('header').innerHTML = html);
-fetch('assets/partials/footer.html').then(r => r.text()).then(html => document.getElementById('footer').innerHTML = html);
+fetch('assets/partials/header.html')
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById('header').innerHTML = html;
+    initDarkModeToggle();
+  });
+fetch('assets/partials/footer.html')
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById('footer').innerHTML = html;
+  });
 </script>
 </body>
 </html>
