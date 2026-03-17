@@ -3,107 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Volunteer with Project Reach – Help someone who just needs to be heard." />
+  <meta name="description" content="Volunteer with Project Reach – Help someone who just needs to be heard. ~2 hrs/week, fully remote, training provided." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Project Reach" />
+  <meta property="og:title" content="Volunteer – Project Reach" />
+  <meta property="og:description" content="Become a volunteer listener and help someone who just needs to be heard. ~2 hrs/week, training provided, fully remote." />
+  <meta property="og:url" content="https://michjt19.github.io/Project-Reach/volunteer.html" />
+  <meta property="og:image" content="https://michjt19.github.io/Project-Reach/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://michjt19.github.io/Project-Reach/volunteer.html" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Lato:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/favicon.png" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <script>(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark');}());</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8M7YHYFMV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8M7YHYFMV');
+  </script>
   <title>Volunteer – Project Reach</title>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8M7YHYFMV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S8M7YHYFMV');
-</script>
 <body>
 <div id="header"></div>
 
-<main>
+<main id="main-content">
   <section class="page-header">
+    <span class="hero-eyebrow">Join Our Team</span>
     <h1>Make a Difference</h1>
     <p>Become a volunteer listener and help someone who just needs to be heard.</p>
+    <div class="volunteer-chips">
+      <span class="volunteer-chip">~2 hrs/week</span>
+      <span class="volunteer-chip">Training provided</span>
+      <span class="volunteer-chip">Fully remote</span>
+    </div>
   </section>
 
   <section class="section">
     <div class="container" style="max-width:600px;">
-      <div class="box">
-        <form id="volunteerForm">
-          <div class="form-group">
-            <label for="name">Full Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="name" name="name" required placeholder="Your full name" autocomplete="name" />
+      <div class="card">
+        <!-- Progress indicator -->
+        <div class="form-progress" aria-label="Form progress">
+          <div class="form-step-label active">
+            <div class="form-step-dot">1</div>
+            <span>About You</span>
           </div>
-          <div class="form-group">
-            <label for="email">Email Address <span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+          <div class="form-step-connector"></div>
+          <div class="form-step-label">
+            <div class="form-step-dot">2</div>
+            <span>Your Story</span>
           </div>
-          <div class="form-group">
-            <label for="why">Why do you want to volunteer? <span aria-hidden="true">*</span></label>
-            <textarea id="why" name="message" rows="5" required placeholder="Share a bit about your motivation..."></textarea>
+          <div class="form-step-connector"></div>
+          <div class="form-step-label">
+            <div class="form-step-dot">3</div>
+            <span>Finish Up</span>
           </div>
-          <label class="form-consent">
-            <input type="checkbox" id="consent" name="consent" required />
-            <span>I have read and agree to the <a href="code-of-conduct.html" target="_blank">Code of Conduct</a> <span aria-hidden="true">*</span></span>
-          </label>
-          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Submit Application</button>
-          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </div>
+
+        <form id="volunteerForm" novalidate>
+          <!-- Step 1: About You -->
+          <div class="form-step active" data-step="1">
+            <h3 style="margin-bottom:1.25rem;">Tell us about yourself</h3>
+            <div class="form-group">
+              <label for="name">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="Your full name" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+            </div>
+            <div class="form-nav">
+              <button type="button" class="btn-primary" data-next>Next &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Your Story -->
+          <div class="form-step" data-step="2">
+            <h3 style="margin-bottom:1.25rem;">Your motivation</h3>
+            <div class="form-group">
+              <label for="why">Why do you want to volunteer? <span aria-hidden="true">*</span></label>
+              <textarea id="why" name="message" rows="5" required placeholder="Share a bit about your motivation..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="experience">Any relevant experience? <span style="color:var(--color-text-muted);font-weight:400;">(optional)</span></label>
+              <textarea id="experience" name="experience" rows="3" placeholder="e.g. listening, counseling, lived experience..."></textarea>
+            </div>
+            <div class="form-nav">
+              <button type="button" class="btn-secondary" data-back>&larr; Back</button>
+              <button type="button" class="btn-primary" data-next>Next &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Finish Up -->
+          <div class="form-step" data-step="3">
+            <h3 style="margin-bottom:1.25rem;">Almost done!</h3>
+            <div class="form-group">
+              <label for="availability">Availability <span aria-hidden="true">*</span></label>
+              <select id="availability" name="availability" required>
+                <option value="" disabled selected>Select your availability</option>
+                <option value="weekdays">Weekdays</option>
+                <option value="evenings">Evenings</option>
+                <option value="weekends">Weekends</option>
+                <option value="flexible">Flexible</option>
+              </select>
+            </div>
+            <label class="form-consent">
+              <input type="checkbox" id="consent" name="consent" required />
+              <span>I have read and agree to the <a href="code-of-conduct.html" target="_blank">Code of Conduct</a> <span aria-hidden="true">*</span></span>
+            </label>
+            <div class="form-nav">
+              <button type="button" class="btn-secondary" data-back>&larr; Back</button>
+              <button type="submit" class="btn-primary">Submit Application</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
   </section>
 </main>
 
-<script>
-  function toggleDropdown() {
-    document.getElementById("volunteerDropdown").classList.toggle("open");
-  }
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".has-dropdown")) {
-      document.getElementById("volunteerDropdown")?.classList.remove("open");
-    }
-  });
-
-  const form = document.getElementById("volunteerForm");
-  const status = document.getElementById("formStatus");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    status.textContent = "Submitting...";
-    status.className = "form-status";
-
-    const data = new FormData(form);
-    const endpoint = "https://formspree.io/f/mnnvplrw";
-
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: data,
-      });
-      if (response.ok) {
-        status.textContent = "✅ Thank you for signing up! We'll be in touch soon.";
-        status.className = "form-status success";
-        form.reset();
-      } else {
-        throw new Error("Submission failed");
-      }
-    } catch (error) {
-      status.textContent = "⚠️ Something went wrong. Please try again later.";
-      status.className = "form-status error";
-    }
-  });
-</script>
+<a href="get-support.html" class="floating-cta" id="floatingCta" aria-label="Get peer support now">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  Need help?
+</a>
 
 <div id="footer"></div>
 <script src="scripts/dark_mode.js"></script>
+<script src="scripts/nav.js"></script>
+<script src="scripts/animations.js"></script>
+<script src="scripts/toast.js"></script>
+<script src="scripts/volunteer-form.js"></script>
 <script>
   fetch('assets/partials/header.html')
     .then(r => r.text())
     .then(html => {
       document.getElementById('header').innerHTML = html;
       initDarkModeToggle();
+      initNav();
     });
   fetch('assets/partials/footer.html')
     .then(r => r.text())

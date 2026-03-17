@@ -1,25 +1,26 @@
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <nav class="nav-bar">
   <div class="nav-container">
     <a href="index.html" class="nav-logo" aria-label="Project Reach Home">
       <img src="assets/reach-logo.png" alt="Project Reach logo" />
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="get-support.html" class="nav-support-link">Get Support</a></li>
+      <li><a href="faq.html">FAQ</a></li>
       <li class="has-dropdown">
-        <button onclick="toggleDropdown()" aria-haspopup="true" aria-expanded="false">
+        <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
           Volunteer ▾
         </button>
         <ul class="dropdown" id="volunteerDropdown">
           <li><a href="volunteer.html">Sign Up</a></li>
-          <li><a href="faq.html">FAQ</a></li>
           <li><a href="code-of-conduct.html">Code of Conduct</a></li>
         </ul>
       </li>
     </ul>
     <div class="nav-actions">
-      <a href="sms:+18444740498" class="btn-nav">Get Support</a>
       <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
     </div>
   </div>

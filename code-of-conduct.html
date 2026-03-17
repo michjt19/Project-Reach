@@ -4,12 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Volunteer Code of Conduct – Project Reach peer support." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Project Reach" />
+<meta property="og:title" content="Code of Conduct – Project Reach" />
+<meta property="og:description" content="Our shared commitment to safe, respectful, and compassionate peer support." />
+<meta property="og:url" content="https://michjt19.github.io/Project-Reach/code-of-conduct.html" />
+<meta property="og:image" content="https://michjt19.github.io/Project-Reach/assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://michjt19.github.io/Project-Reach/code-of-conduct.html" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Lato:wght@400;600&display=swap" rel="stylesheet" />
 <link rel="icon" href="assets/favicon.png" />
 <link rel="stylesheet" href="assets/styles.css" />
-<title>Code of Conduct – Project Reach</title>
-</head>
+<script>(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark');}());</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8M7YHYFMV"></script>
 <script>
@@ -18,16 +25,20 @@
   gtag('js', new Date());
   gtag('config', 'G-S8M7YHYFMV');
 </script>
+<title>Code of Conduct – Project Reach</title>
+</head>
 <body>
 <div id="header"></div>
 
-<main>
+<main id="main-content">
   <section class="page-header">
     <h1>Volunteer Code of Conduct</h1>
     <p>Our shared commitment to safe, respectful, and compassionate support.</p>
   </section>
 
   <div class="prose">
+    <p style="font-size:1.05rem;line-height:1.8;color:var(--color-text-muted);margin-bottom:2rem;">Volunteering with Project Reach is meaningful work — and sometimes challenging work. The people who reach out to us are trusting us with their most vulnerable moments. This Code of Conduct exists not to restrict you, but to protect them, protect you, and protect the integrity of the space we're building together. Thank you for taking it seriously.</p>
+
     <h2>Our Core Commitments</h2>
     <ul>
       <li><strong>Treat every person with respect and empathy.</strong> Everyone who reaches out deserves to feel heard and valued.</li>
@@ -59,31 +70,33 @@
     <p>Peer support work can be emotionally demanding. We encourage you to practice self-care, maintain healthy boundaries, and reach out to the team if you ever feel overwhelmed. You cannot pour from an empty cup.</p>
 
     <p>By volunteering with Project Reach, you agree to uphold these standards and help create a safe, welcoming space for everyone who reaches out.</p>
+
+    <div class="callout-box">
+      <strong>Questions about this Code of Conduct?</strong> Email us at <a href="mailto:projectreachplatform@gmail.com">projectreachplatform@gmail.com</a> — we're always happy to clarify or discuss.
+    </div>
   </div>
 </main>
 
-<script>
-  function toggleDropdown() {
-    document.getElementById("volunteerDropdown").classList.toggle("open");
-  }
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".has-dropdown")) {
-      document.getElementById("volunteerDropdown")?.classList.remove("open");
-    }
-  });
-</script>
+<a href="get-support.html" class="floating-cta" id="floatingCta" aria-label="Get peer support now">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  Need help?
+</a>
+
 <div id="footer"></div>
 <script src="scripts/dark_mode.js"></script>
+<script src="scripts/nav.js"></script>
+<script src="scripts/animations.js"></script>
 <script>
-fetch('assets/partials/header.html')
-  .then(r => r.text())
-  .then(html => {
-    document.getElementById('header').innerHTML = html;
-    initDarkModeToggle();
-  });
-fetch('assets/partials/footer.html')
-  .then(r => r.text())
-  .then(html => { document.getElementById('footer').innerHTML = html; });
+  fetch('assets/partials/header.html')
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('header').innerHTML = html;
+      initDarkModeToggle();
+      initNav();
+    });
+  fetch('assets/partials/footer.html')
+    .then(r => r.text())
+    .then(html => { document.getElementById('footer').innerHTML = html; });
 </script>
 </body>
 </html>
