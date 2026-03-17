@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Project Reach – Peer-support resources for emotional well-being" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha384-..." crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+<meta name="description" content="Volunteer Code of Conduct – Project Reach peer support." />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Lato:wght@400;600&display=swap" rel="stylesheet" />
 <link rel="icon" href="assets/favicon.png" />
 <link rel="stylesheet" href="assets/styles.css" />
-<script src="https://cdn.tailwindcss.com"></script>
-<title>Code of Conduct – Reach Collective</title>
+<title>Code of Conduct – Project Reach</title>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8M7YHYFMV"></script>
@@ -17,41 +16,62 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-S8M7YHYFMV');
 </script>
-<body class="bg-gradient-to-b from-[#eaf7f6] to-white font-sans text-gray-800">
+<body>
 <div id="header"></div>
 
-  <div class="container">
-    <header class="site-header">
-      <img src="assets/reach-logo.png" alt="Reach Collective logo" class="logo" />
-      <p class="welcome">Volunteer Code of Conduct</p>
-    </header>
+<main>
+  <section class="page-header">
+    <h1>Volunteer Code of Conduct</h1>
+    <p>Our shared commitment to safe, respectful, and compassionate support.</p>
+  </section>
 
-    <main class="box">
-      <ul>
-        <li>✅ Treat every person with respect and empathy.</li>
-        <li>✅ Maintain confidentiality of what is shared.</li>
-        <li>✅ Avoid giving medical or legal advice.</li>
-        <li>✅ Refer to crisis services when needed (988 or 911).</li>
-        <li>✅ Commit to nonjudgmental, inclusive support.</li>
-      </ul>
-    </main>
+  <div class="prose">
+    <h2>Our Core Commitments</h2>
+    <ul>
+      <li><strong>Treat every person with respect and empathy.</strong> Everyone who reaches out deserves to feel heard and valued.</li>
+      <li><strong>Maintain confidentiality.</strong> What is shared in conversation stays in conversation. Never disclose personal information without consent.</li>
+      <li><strong>Avoid giving medical or legal advice.</strong> You are a peer listener, not a therapist or counselor. Stay in your lane — and that's enough.</li>
+      <li><strong>Refer to crisis services when needed.</strong> If someone expresses immediate danger or thoughts of self-harm, direct them to <a href="tel:988">988</a> or <a href="tel:911">911</a> right away.</li>
+      <li><strong>Commit to nonjudgmental, inclusive support.</strong> Welcome everyone, regardless of background, identity, or circumstances.</li>
+    </ul>
 
+    <h2>What We Expect</h2>
+    <p>As a volunteer, you represent Project Reach and the values of compassionate peer support. We ask that you:</p>
+    <ul>
+      <li>Show up consistently and reliably when you are scheduled</li>
+      <li>Reach out to the team if you are struggling or need support yourself</li>
+      <li>Complete any onboarding or training provided before beginning conversations</li>
+      <li>Never engage in romantic or inappropriate communication with users</li>
+      <li>Report any safety concerns to the team promptly</li>
+    </ul>
+
+    <h2>What Is Not Tolerated</h2>
+    <ul>
+      <li>Harassment, discrimination, or disrespectful communication in any form</li>
+      <li>Sharing or distributing user information</li>
+      <li>Using your volunteer position for personal gain</li>
+      <li>Ignoring or minimizing expressions of distress or harm</li>
+    </ul>
+
+    <h2>Your Well-being Matters Too</h2>
+    <p>Peer support work can be emotionally demanding. We encourage you to practice self-care, maintain healthy boundaries, and reach out to the team if you ever feel overwhelmed. You cannot pour from an empty cup.</p>
+
+    <p>By volunteering with Project Reach, you agree to uphold these standards and help create a safe, welcoming space for everyone who reaches out.</p>
   </div>
+</main>
 
-  <script>
-    function toggleDropdown() {
-      document.getElementById("volunteerDropdown").classList.toggle("open");
+<script>
+  function toggleDropdown() {
+    document.getElementById("volunteerDropdown").classList.toggle("open");
+  }
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".has-dropdown")) {
+      document.getElementById("volunteerDropdown")?.classList.remove("open");
     }
-
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".has-dropdown")) {
-        document.getElementById("volunteerDropdown")?.classList.remove("open");
-      }
-    });
-  </script>
+  });
+</script>
 <div id="footer"></div>
 <script src="scripts/dark_mode.js"></script>
 <script>
@@ -63,9 +83,7 @@ fetch('assets/partials/header.html')
   });
 fetch('assets/partials/footer.html')
   .then(r => r.text())
-  .then(html => {
-    document.getElementById('footer').innerHTML = html;
-  });
+  .then(html => { document.getElementById('footer').innerHTML = html; });
 </script>
 </body>
 </html>
