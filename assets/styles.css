@@ -1201,6 +1201,21 @@ html.dark .page-header {
   text-decoration: none !important;
 }
 
+/* Prevent Tawk bubble from overlapping floating CTA */
+[id^="tawk-bubble"],
+iframe[src*="tawk.to"],
+div[id*="tawk"] {
+  bottom: 72px !important;
+}
+
+@media (max-width: 640px) {
+  [id^="tawk-bubble"],
+  iframe[src*="tawk.to"],
+  div[id*="tawk"] {
+    bottom: 64px !important;
+  }
+}
+
 /* ===== TOAST ===== */
 .toast-container {
   position: fixed;
