@@ -191,8 +191,42 @@
 <script src="scripts/nav.js"></script>
 <script src="scripts/animations.js"></script>
 <script src="scripts/toast.js"></script>
+
+<!-- openTawkChat: called by the "Chat with us now" button -->
 <script>
+  function openTawkChat() {
+    if (typeof Tawk_API !== 'undefined' && Tawk_API.maximize) {
+      Tawk_API.showWidget();
+      Tawk_API.maximize();
+    } else {
+      // Tawk hasn't fully loaded yet — show a fallback message
+      var msg = document.getElementById('chatFallbackMsg');
+      msg.style.display = 'block';
+      msg.textContent = 'Chat is loading, please try again in a moment.';
+    }
+  }
 </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+
+// Hide the floating widget bubble on load — only open via button click
+Tawk_API.onLoad = function(){
+  Tawk_API.hideWidget();
+};
+
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6843b2759ed8c2190a6d55fb/1it47275k';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
 <script>
   fetch('assets/partials/header.html')
     .then(r => r.text())
