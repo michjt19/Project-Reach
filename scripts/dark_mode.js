@@ -4,17 +4,14 @@
  * Outputs: Applies 'dark' class to the document root.
  * Complexity: O(1) per toggle.
  */
-function applyTheme(theme) {
-  document.documentElement.classList.toggle('dark', theme === 'dark');
-}
-
 function initDarkModeToggle() {
-  const saved = localStorage.getItem('theme');
-  if (saved) applyTheme(saved);
   const btn = document.getElementById('themeToggle');
   if (!btn) return;
+  // Sync icon with current theme (FOUC inline script already applied theme at load)
+  btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
   btn.addEventListener('click', () => {
     const dark = document.documentElement.classList.toggle('dark');
     localStorage.setItem('theme', dark ? 'dark' : 'light');
+    btn.textContent = dark ? '☀️' : '🌙';
   });
 }
