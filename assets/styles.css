@@ -2031,3 +2031,36 @@ button:focus-visible {
   .fade-in-up[data-delay="2"] { transition-delay: 0.2s; }
   .fade-in-up[data-delay="3"] { transition-delay: 0.3s; }
 }
+
+/* Homepage testimonials grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.testimonials-grid .testimonial-card {
+  min-width: 0;
+}
+
+/* Conversation starters */
+.starters-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.starters-list li {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
