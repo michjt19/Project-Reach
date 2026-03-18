@@ -66,7 +66,7 @@
           <span style="font-size:2rem;display:block;margin-bottom:0.75rem;">💬</span>
           <h2>Live Chat</h2>
           <p>Connect instantly with a volunteer listener right now.</p>
-          <button class="btn-primary" onclick="if(typeof Tawk_API!=='undefined'&&typeof Tawk_API.toggle==='function')Tawk_API.toggle();else if(typeof showToast==='function')showToast('Chat is loading \u2014 please try again in a moment.','error');else{var m=document.getElementById('chatFallbackMsg');if(m){m.textContent='Chat is loading \u2014 please try again in a moment.';m.style.display='block';}}" style="width:100%;justify-content:center;">Chat with us now</button>
+          <button class="btn-primary" onclick="openTawkChat()" style="width:100%;justify-content:center;">Chat with us now</button>
           <p id="chatFallbackMsg" role="status" aria-live="polite" style="display:none;margin-top:0.5rem;font-size:0.875rem;color:var(--color-text-muted);text-align:center;"></p>
         </div>
 
@@ -186,25 +186,27 @@
   </section>
 </main>
 
-<!-- Tawk.to Chat Widget -->
-<script type="text/javascript">
-  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-  (function () {
-    var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/6843b2759ed8c2190a6d55fb/1it47275k';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-  })();
-</script>
-
 <div id="footer"></div>
 <script src="scripts/dark_mode.js"></script>
 <script src="scripts/nav.js"></script>
 <script src="scripts/animations.js"></script>
 <script src="scripts/toast.js"></script>
+<script>
+function openTawkChat() {
+  if (typeof Tawk_API !== 'undefined' && typeof Tawk_API.toggle === 'function') {
+    Tawk_API.maximize();
+    return;
+  }
+  var Tawk_API = window.Tawk_API = window.Tawk_API || {};
+  Tawk_API.onLoad = function () { Tawk_API.maximize(); };
+  var s1 = document.createElement('script');
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6843b2759ed8c2190a6d55fb/1it47275k';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  document.head.appendChild(s1);
+}
+</script>
 <script>
   fetch('assets/partials/header.html')
     .then(r => r.text())
