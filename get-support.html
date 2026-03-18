@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Get Support – Project Reach. Connect with a volunteer listener via live chat, text, or SMS. Free, anonymous, no waitlist." />
+<meta name="description" content="Get free peer support now. Connect with a caring volunteer listener via live chat, text, or SMS — anonymous, no waitlist, available 24/7." />
+<meta name="theme-color" content="#2D4A3E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Project Reach" />
-<meta property="og:title" content="Get Support – Project Reach" />
+<meta property="og:title" content="Get Free Support Now | Live Chat, Text & SMS | Project Reach" />
 <meta property="og:description" content="Connect with a caring volunteer listener now. Free, anonymous, no waitlist. Live chat, text, or SMS." />
-<meta property="og:url" content="https://michjt19.github.io/Project-Reach/get-support.html" />
-<meta property="og:image" content="https://michjt19.github.io/Project-Reach/assets/og-image.png" />
+<meta property="og:url" content="https://thereachcommunity.com/get-support.html" />
+<meta property="og:image" content="https://thereachcommunity.com/assets/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="canonical" href="https://michjt19.github.io/Project-Reach/get-support.html" />
+<link rel="canonical" href="https://thereachcommunity.com/get-support.html" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Lato:wght@400;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 <link rel="icon" href="assets/favicon.png" />
 <link rel="stylesheet" href="assets/styles.css" />
 <script>(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark');}());</script>
@@ -25,7 +26,7 @@
   gtag('js', new Date());
   gtag('config', 'G-S8M7YHYFMV');
 </script>
-<title>Get Support – Project Reach</title>
+<title>Get Free Support Now | Live Chat, Text & SMS | Project Reach</title>
 </head>
 <body>
 <div id="header"></div>
@@ -53,15 +54,16 @@
         <div class="support-card">
           <span class="support-card-badge">Fastest</span>
           <span style="font-size:2rem;display:block;margin-bottom:0.75rem;">💬</span>
-          <h3>Live Chat</h3>
+          <h2>Live Chat</h2>
           <p>Connect instantly with a volunteer listener right now.</p>
-          <button class="btn-primary" onclick="if(typeof Tawk_API!=='undefined')Tawk_API.toggle();else alert('Chat is loading — please try again in a moment.');" style="width:100%;justify-content:center;">Chat with us now</button>
+          <button class="btn-primary" onclick="if(typeof Tawk_API!=='undefined'&&typeof Tawk_API.toggle==='function')Tawk_API.toggle();else if(typeof showToast==='function')showToast('Chat is loading \u2014 please try again in a moment.','error');else{var m=document.getElementById('chatFallbackMsg');if(m){m.textContent='Chat is loading \u2014 please try again in a moment.';m.style.display='block';}}" style="width:100%;justify-content:center;">Chat with us now</button>
+          <p id="chatFallbackMsg" role="status" aria-live="polite" style="display:none;margin-top:0.5rem;font-size:0.875rem;color:var(--color-text-muted);text-align:center;"></p>
         </div>
 
         <!-- Text / SMS -->
         <div class="support-card">
           <span style="font-size:2rem;display:block;margin-bottom:0.75rem;">📱</span>
-          <h3>Text / SMS</h3>
+          <h2>Text / SMS</h2>
           <p>Text us at any time — available around the clock.</p>
           <a href="sms:+19014921712" class="btn-primary" style="width:100%;justify-content:center;margin-bottom:0.75rem;">Text from your phone</a>
           <div class="copy-number-wrap">
@@ -73,7 +75,7 @@
         <!-- What to expect -->
         <div class="support-card">
           <span style="font-size:2rem;display:block;margin-bottom:0.75rem;">🤝</span>
-          <h3>What to Expect</h3>
+          <h2>What to Expect</h2>
           <p>A few things to know before you reach out:</p>
           <ul>
             <li>A real volunteer — not a bot or AI</li>
@@ -176,6 +178,7 @@
 <script src="scripts/dark_mode.js"></script>
 <script src="scripts/nav.js"></script>
 <script src="scripts/animations.js"></script>
+<script src="scripts/toast.js"></script>
 <script>
   fetch('assets/partials/header.html')
     .then(r => r.text())

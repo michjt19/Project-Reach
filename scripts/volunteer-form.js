@@ -16,8 +16,10 @@
     slideDirection = direction || 'forward';
     steps.forEach(function (s, i) {
       s.classList.remove('active', 'slide-left');
+      s.removeAttribute('aria-current');
       if (i === index) {
         s.classList.add('active');
+        s.setAttribute('aria-current', 'step');
         if (slideDirection === 'back') s.classList.add('slide-left');
       }
     });

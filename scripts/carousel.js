@@ -40,6 +40,16 @@
   wrapper.addEventListener('mouseenter', stopAuto);
   wrapper.addEventListener('mouseleave', startAuto);
 
+  wrapper.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      stopAuto(); goTo(current - 1); startAuto();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      stopAuto(); goTo(current + 1); startAuto();
+    }
+  });
+
   goTo(0);
   startAuto();
 })();
