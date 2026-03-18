@@ -513,6 +513,13 @@ html.dark .hero {
   letter-spacing: -0.02em;
 }
 
+.hero-subhead {
+  font-size: 1.25rem;
+  color: inherit;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
 .hero-subtitle {
   font-family: var(--font-body);
   font-size: 1.125rem;

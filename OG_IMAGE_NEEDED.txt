@@ -1,0 +1,12 @@
+ACTION REQUIRED: Create an og-image.png for social sharing.
+
+Recommended specs:
+- Dimensions: 1200 x 630 pixels
+- Format: PNG (or JPG)
+- File name: og-image.png
+- Location: assets/ folder (same location referenced in all HTML pages: assets/og-image.png)
+- Content: Project Reach logo or wordmark on a solid background
+  with tagline "Free Peer Support — You Don't Have to Go Through This Alone"
+
+Once created, upload to the assets/ folder and remove this file.
+All HTML pages already reference /assets/og-image.png in their Open Graph tags.
