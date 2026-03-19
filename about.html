@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#2D4A3E" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Project Reach" />
-  <meta property="og:title" content="About Project Reach | Free Peer Support Community" />
+  <meta property="og:title" content="About Project Reach | Free Mental Health Peer Support" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -19,11 +19,18 @@
     ]
   }
   </script>
-  <meta property="og:description" content="Project Reach fills the gap between crisis lines and clinical care — real humans, freely listening, zero red tape." />
+  <meta property="og:description" content="Project Reach fills the gap between crisis lines and clinical care. Free online peer support from real volunteers — no red tape, no waitlist." />
   <meta property="og:url" content="https://www.thereachcommunity.com/about.html" />
   <meta property="og:image" content="https://www.thereachcommunity.com/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Project Reach | Free Mental Health Peer Support" />
+  <meta name="twitter:description" content="Project Reach fills the gap between crisis lines and clinical care. Free online peer support from real volunteers — no red tape, no waitlist." />
+  <meta name="twitter:image" content="https://www.thereachcommunity.com/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Project Reach — free peer support online" />
   <link rel="canonical" href="https://www.thereachcommunity.com/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/favicon.png" />
@@ -40,7 +47,42 @@
   <title>About Project Reach | Free Mental Health Peer Support</title>
 </head>
 <body>
-<div id="header"></div>
+<header id="header">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav-bar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Project Reach Home">
+      <img src="assets/reach-logo.png" alt="Project Reach logo" width="140" height="40" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="get-support.html" class="nav-support-link">Get Support</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="has-dropdown">
+        <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Volunteer ▾
+        </button>
+        <ul class="dropdown" id="volunteerDropdown">
+          <li><a href="volunteer.html">Sign Up</a></li>
+          <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="breadcrumb-separator" aria-hidden="true">&rsaquo;</span>
+  About
+</nav>
 
 <main id="main-content">
   <!-- Mission hero -->
@@ -59,8 +101,8 @@
       </div>
       <div class="card card--accent">
         <p>Project Reach was created for one reason: to make sure no one feels alone in their hardest moments.</p>
-        <p>In a world flooded with apps, forms, and waitlists, real connection has become hard to find — especially for those who aren't in a full-blown crisis, but are still hurting. Project Reach fills that gap. We offer instant, human support from trained peers who simply listen, care, and sit with you in whatever you're facing — without judgment, diagnosis, or red tape.</p>
-        <p>Whether you're texting at 2 a.m. because you're spiraling quietly, or just need to hear that you matter — we're here. No accounts. No labels. Just presence.</p>
+        <p>In a world flooded with apps, forms, and waitlists, real connection has become hard to find — especially for those who aren't in a full-blown crisis, but are still hurting. Project Reach fills that gap. We offer instant, human support from <a href="volunteer.html">trained peers</a> who simply listen, care, and sit with you in whatever you're facing — without judgment, diagnosis, or red tape.</p>
+        <p>Whether you're texting at 2 a.m. because you're spiraling quietly, or just need to hear that you matter — we're here. No accounts. No labels. Just presence. Visit our <a href="get-support.html">Get Support page</a> to connect with a listener now.</p>
       </div>
     </div>
   </section>
@@ -176,22 +218,48 @@
   Need help?
 </a>
 
-<div id="footer"></div>
+<footer id="footer">
+<div class="footer-extended">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/reach-logo.png" alt="Project Reach logo" class="footer-logo" width="140" height="40" />
+      <p>A quiet place to be heard. Peer support for emotional well-being — no judgment, no waitlists.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="get-support.html">Get Support</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Crisis &amp; Support</h4>
+      <a href="sms:+19014921712" class="footer-phone" title="Text from your phone">+1 (901) 492-1712</a>
+      <ul>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="tel:988">988 Crisis Lifeline</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; Reach Collective 2026. All rights reserved.</span>
+    <span>Peer support only — not a substitute for professional care.</span>
+  </div>
+</div>
+</footer>
 <script src="scripts/dark_mode.js"></script>
 <script src="scripts/nav.js"></script>
 <script src="scripts/animations.js"></script>
 <script src="scripts/carousel.js"></script>
 <script>
-  fetch('assets/partials/header.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-      initDarkModeToggle();
-      initNav();
-    });
-  fetch('assets/partials/footer.html')
-    .then(r => r.text())
-    .then(html => { document.getElementById('footer').innerHTML = html; });
+  initDarkModeToggle();
+  initNav();
 </script>
 </body>
 </html>

@@ -12,7 +12,14 @@
 <meta property="og:url" content="https://www.thereachcommunity.com/faq.html" />
 <meta property="og:image" content="https://www.thereachcommunity.com/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Peer Support FAQ | Project Reach" />
+<meta name="twitter:description" content="Answers to common questions about Project Reach — free mental health peer support, how it works, volunteer info, privacy, and more." />
+<meta name="twitter:image" content="https://www.thereachcommunity.com/og-image.jpg" />
+<meta name="twitter:image:alt" content="Project Reach — free peer support online" />
 <link rel="canonical" href="https://www.thereachcommunity.com/faq.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 <link rel="icon" href="assets/favicon.png" />
@@ -45,10 +52,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is Project Reach?",
+      "name": "What is free peer support?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Reach is a peer support project connecting people who just need someone to talk to. We're not crisis counselors or therapists — just humans who genuinely care and are trained to listen without judgment."
+        "text": "Free peer support connects you with a trained volunteer listener who genuinely cares — at no cost. Project Reach is a peer support service for anyone who just needs someone to talk to. We're not crisis counselors or therapists — just humans trained to listen without judgment."
       }
     },
     {
@@ -61,18 +68,18 @@
     },
     {
       "@type": "Question",
-      "name": "Is the service free?",
+      "name": "Is peer support free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, completely free. Project Reach is volunteer-powered and costs nothing to use."
+        "text": "Yes, completely free. Project Reach is volunteer-powered and costs nothing to use. There are no fees, no subscriptions, and no hidden costs — ever."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I get support?",
+      "name": "How do I connect with a peer support listener?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Visit the Get Support page to see all your options — live chat, text, and more. No sign-up, no forms — just reach out whenever you're ready."
+        "text": "Visit the Get Support page to see all your options — live chat, text, and more. No sign-up, no forms, no waitlist — just reach out whenever you're ready."
       }
     },
     {
@@ -114,13 +121,72 @@
         "@type": "Answer",
         "text": "Most volunteers contribute about 2 hours per week. We're flexible — you can choose weekday, evening, or weekend availability. Life happens, and we work around your schedule."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get mental health support without insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Project Reach is completely free and requires no insurance, no referral, and no paperwork. If you need someone to talk to, we're here — regardless of your insurance status."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is online peer support anonymous?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You don't need to create an account, share your name, or provide any identifying information. You can use a nickname or no name at all. Your privacy is respected by default."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I say when I reach out for peer support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can say anything — or nothing at all. Many people start with 'I just need to talk' or 'I'm not sure where to begin.' Our listeners meet you wherever you are. There's no wrong way to start."
+      }
     }
   ]
 }
 </script>
 </head>
 <body>
-<div id="header"></div>
+<header id="header">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav-bar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Project Reach Home">
+      <img src="assets/reach-logo.png" alt="Project Reach logo" width="140" height="40" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="get-support.html" class="nav-support-link">Get Support</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="has-dropdown">
+        <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Volunteer ▾
+        </button>
+        <ul class="dropdown" id="volunteerDropdown">
+          <li><a href="volunteer.html">Sign Up</a></li>
+          <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="breadcrumb-separator" aria-hidden="true">&rsaquo;</span>
+  FAQ
+</nav>
 
 <main id="main-content">
   <section class="page-header">
@@ -147,11 +213,11 @@
       <div id="faqList">
         <div class="faq-item fade-in-up" data-audience="both">
           <button class="faq-question" aria-expanded="false">
-            What is Project Reach?
+            What is free peer support?
             <span class="chevron" aria-hidden="true">▾</span>
           </button>
           <div class="faq-answer">
-            Reach is a peer support project connecting people who just need someone to talk to. We're not crisis counselors or therapists — just humans who genuinely care and are trained to listen without judgment.
+            Free peer support connects you with a trained volunteer listener who genuinely cares — at no cost. Project Reach is a peer support service for anyone who just needs someone to talk to. We're not crisis counselors or therapists — just humans trained to listen without judgment.
           </div>
         </div>
 
@@ -167,21 +233,21 @@
 
         <div class="faq-item fade-in-up" data-audience="both">
           <button class="faq-question" aria-expanded="false">
-            Is the service free?
+            Is peer support free?
             <span class="chevron" aria-hidden="true">▾</span>
           </button>
           <div class="faq-answer">
-            Yes, completely free. Project Reach is volunteer-powered and costs nothing to use.
+            Yes, completely free. Project Reach is volunteer-powered and costs nothing to use. There are no fees, no subscriptions, and no hidden costs — ever.
           </div>
         </div>
 
         <div class="faq-item fade-in-up" data-audience="seeker">
           <button class="faq-question" aria-expanded="false">
-            How do I get support?
+            How do I connect with a peer support listener?
             <span class="chevron" aria-hidden="true">▾</span>
           </button>
           <div class="faq-answer">
-            Visit our <a href="get-support.html">Get Support</a> page to see all your options — live chat, text, and more. No sign-up, no forms — just reach out whenever you're ready.
+            Visit our <a href="get-support.html">Get Support</a> page to see all your options — live chat, text, and more. No sign-up, no forms, no waitlist — just reach out whenever you're ready.
           </div>
         </div>
 
@@ -284,6 +350,36 @@
             Crisis hotlines are designed for emergencies. Project Reach is for everyday emotional struggles — the hard days that don't qualify as a crisis but still hurt. We're a complement to those services, not a replacement.
           </div>
         </div>
+        <div class="faq-item fade-in-up" data-audience="seeker">
+          <button class="faq-question" aria-expanded="false">
+            Can I get mental health support without insurance?
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-answer">
+            Absolutely. Project Reach is completely free and requires no insurance, no referral, and no paperwork. If you need someone to talk to, we're here — regardless of your insurance status.
+          </div>
+        </div>
+
+        <div class="faq-item fade-in-up" data-audience="seeker">
+          <button class="faq-question" aria-expanded="false">
+            Is online peer support anonymous?
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-answer">
+            Yes. You don't need to create an account, share your name, or provide any identifying information. You can use a nickname or no name at all. Your privacy is respected by default.
+          </div>
+        </div>
+
+        <div class="faq-item fade-in-up" data-audience="seeker">
+          <button class="faq-question" aria-expanded="false">
+            What should I say when I reach out for peer support?
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-answer">
+            You can say anything — or nothing at all. Many people start with "I just need to talk" or "I'm not sure where to begin." Our listeners meet you wherever you are. There's no wrong way to start.
+          </div>
+        </div>
+
       </div><!-- #faqList -->
 
       <p id="faqNoResults" style="display:none;text-align:center;color:var(--color-text-muted);padding:2rem 0;">No questions match your search.</p>
@@ -297,7 +393,41 @@
   Need help?
 </a>
 
-<div id="footer"></div>
+<footer id="footer">
+<div class="footer-extended">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/reach-logo.png" alt="Project Reach logo" class="footer-logo" width="140" height="40" />
+      <p>A quiet place to be heard. Peer support for emotional well-being — no judgment, no waitlists.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="get-support.html">Get Support</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Crisis &amp; Support</h4>
+      <a href="sms:+19014921712" class="footer-phone" title="Text from your phone">+1 (901) 492-1712</a>
+      <ul>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="tel:988">988 Crisis Lifeline</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; Reach Collective 2026. All rights reserved.</span>
+    <span>Peer support only — not a substitute for professional care.</span>
+  </div>
+</div>
+</footer>
 <script src="scripts/dark_mode.js"></script>
 <script src="scripts/nav.js"></script>
 <script src="scripts/animations.js"></script>
@@ -353,16 +483,8 @@
   }
 </script>
 <script>
-  fetch('assets/partials/header.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-      initDarkModeToggle();
-      initNav();
-    });
-  fetch('assets/partials/footer.html')
-    .then(r => r.text())
-    .then(html => { document.getElementById('footer').innerHTML = html; });
+  initDarkModeToggle();
+  initNav();
 </script>
 
 </body>

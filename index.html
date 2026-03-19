@@ -8,12 +8,19 @@
 <meta name="theme-color" content="#2D4A3E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Project Reach" />
-<meta property="og:title" content="Free Peer Support | Talk to Someone Now | Project Reach" />
-<meta property="og:description" content="Connect with a real volunteer listener — free, anonymous, no waitlist. You don't have to go through this alone." />
+<meta property="og:title" content="Free Peer Support Online | Project Reach" />
+<meta property="og:description" content="Free peer support from real volunteer listeners. Someone to talk to online — no appointment, no waitlist, no cost." />
 <meta property="og:url" content="https://www.thereachcommunity.com/" />
 <meta property="og:image" content="https://www.thereachcommunity.com/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Peer Support Online | Project Reach" />
+<meta name="twitter:description" content="Free peer support from real volunteer listeners. Someone to talk to online — no appointment, no waitlist, no cost." />
+<meta name="twitter:image" content="https://www.thereachcommunity.com/og-image.jpg" />
+<meta name="twitter:image:alt" content="Project Reach — free peer support online" />
 <link rel="canonical" href="https://www.thereachcommunity.com/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 <link rel="icon" href="assets/favicon.png" />
@@ -33,7 +40,9 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "NonprofitOrganization"],
+      "foundingDate": "2025",
+      "knowsAbout": ["peer support", "mental health"],
       "name": "Project Reach",
       "alternateName": "Reach Collective",
       "url": "https://www.thereachcommunity.com",
@@ -46,7 +55,11 @@
         "areaServed": "US",
         "availableLanguage": "English"
       },
-      "sameAs": []
+      "sameAs": [
+        "https://www.tiktok.com/@thereachcommunity",
+        "https://www.facebook.com/people/The-Reach-Community/61580683322402/",
+        "https://www.instagram.com/the_reach_community/"
+      ]
     },
     {
       "@type": "WebSite",
@@ -58,7 +71,36 @@
 </script>
 </head>
 <body>
-<div id="header"></div>
+<header id="header">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav-bar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Project Reach Home">
+      <img src="assets/reach-logo.png" alt="Project Reach logo" width="140" height="40" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="get-support.html" class="nav-support-link">Get Support</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="has-dropdown">
+        <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Volunteer ▾
+        </button>
+        <ul class="dropdown" id="volunteerDropdown">
+          <li><a href="volunteer.html">Sign Up</a></li>
+          <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</nav>
+</header>
 
 <div class="container">
   <div class="disclaimer-banner" role="alert" aria-label="Peer support disclaimer">
@@ -90,7 +132,7 @@
     </div>
   </div>
 
-  <p>Project Reach provides free peer support and live chat for anyone navigating mental health challenges. Whether you're feeling anxious, overwhelmed, or simply need someone to talk to — our trained volunteer listeners are here 24/7. No appointments. No forms. No cost. Just real human connection when you need it most.</p>
+  <p>Project Reach provides free peer support and live chat for anyone navigating mental health challenges. Whether you're feeling anxious, overwhelmed, or simply need someone to talk to — our <a href="volunteer.html">trained volunteer listeners</a> are here 24/7. No appointments. No forms. No cost. Just real human connection when you need it most.</p>
 
   <!-- How it works -->
   <section class="section">
@@ -193,21 +235,47 @@
   Need help?
 </a>
 
-<div id="footer"></div>
+<footer id="footer">
+<div class="footer-extended">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/reach-logo.png" alt="Project Reach logo" class="footer-logo" width="140" height="40" />
+      <p>A quiet place to be heard. Peer support for emotional well-being — no judgment, no waitlists.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="get-support.html">Get Support</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Crisis &amp; Support</h4>
+      <a href="sms:+19014921712" class="footer-phone" title="Text from your phone">+1 (901) 492-1712</a>
+      <ul>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="tel:988">988 Crisis Lifeline</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; Reach Collective 2026. All rights reserved.</span>
+    <span>Peer support only — not a substitute for professional care.</span>
+  </div>
+</div>
+</footer>
 <script src="scripts/dark_mode.js"></script>
 <script src="scripts/nav.js"></script>
 <script src="scripts/animations.js"></script>
 <script>
-  fetch('assets/partials/header.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-      initDarkModeToggle();
-      initNav();
-    });
-  fetch('assets/partials/footer.html')
-    .then(r => r.text())
-    .then(html => { document.getElementById('footer').innerHTML = html; });
+  initDarkModeToggle();
+  initNav();
 </script>
 </body>
 </html>

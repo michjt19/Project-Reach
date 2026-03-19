@@ -8,12 +8,19 @@
 <meta name="theme-color" content="#2D4A3E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Project Reach" />
-<meta property="og:title" content="Talk to Someone Now — Free Peer Support | Project Reach" />
-<meta property="og:description" content="Talk to a real volunteer listener — free, anonymous, no appointment. Available 24/7 with no waitlist." />
+<meta property="og:title" content="Talk to Someone Online Free | Project Reach" />
+<meta property="og:description" content="Free emotional support online, whenever you need it. Talk to someone via live chat or text — trained volunteer listeners, no appointment, no waitlist." />
 <meta property="og:url" content="https://www.thereachcommunity.com/get-support.html" />
 <meta property="og:image" content="https://www.thereachcommunity.com/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Talk to Someone Online Free | Project Reach" />
+<meta name="twitter:description" content="Free emotional support online, whenever you need it. Talk to someone via live chat or text — trained volunteer listeners, no appointment, no waitlist." />
+<meta name="twitter:image" content="https://www.thereachcommunity.com/og-image.jpg" />
+<meta name="twitter:image:alt" content="Project Reach — free peer support online" />
 <link rel="canonical" href="https://www.thereachcommunity.com/get-support.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 <link rel="icon" href="assets/favicon.png" />
@@ -38,9 +45,64 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Peer Support",
+  "name": "Project Reach Peer Support",
+  "description": "Free online peer support from trained volunteer listeners. Talk to someone via live chat or text — no appointment, no waitlist, no cost.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Project Reach",
+    "url": "https://www.thereachcommunity.com"
+  },
+  "areaServed": "US",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 </head>
 <body>
-<div id="header"></div>
+<header id="header">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav-bar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Project Reach Home">
+      <img src="assets/reach-logo.png" alt="Project Reach logo" width="140" height="40" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="get-support.html" class="nav-support-link">Get Support</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="has-dropdown">
+        <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Volunteer ▾
+        </button>
+        <ul class="dropdown" id="volunteerDropdown">
+          <li><a href="volunteer.html">Sign Up</a></li>
+          <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="breadcrumb-separator" aria-hidden="true">&rsaquo;</span>
+  Get Support
+</nav>
 
 <main id="main-content">
   <!-- Support hero -->
@@ -90,7 +152,7 @@
           <h2>What to Expect</h2>
           <p>A few things to know before you reach out:</p>
           <ul>
-            <li>A real volunteer — not a bot or AI</li>
+            <li>A real <a href="volunteer.html">volunteer</a> — not a bot or AI</li>
             <li>Zero judgment, no matter what you share</li>
             <li>Anonymous by default — no account needed</li>
           </ul>
@@ -188,7 +250,41 @@
   </section>
 </main>
 
-<div id="footer"></div>
+<footer id="footer">
+<div class="footer-extended">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/reach-logo.png" alt="Project Reach logo" class="footer-logo" width="140" height="40" />
+      <p>A quiet place to be heard. Peer support for emotional well-being — no judgment, no waitlists.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="get-support.html">Get Support</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Crisis &amp; Support</h4>
+      <a href="sms:+19014921712" class="footer-phone" title="Text from your phone">+1 (901) 492-1712</a>
+      <ul>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="tel:988">988 Crisis Lifeline</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; Reach Collective 2026. All rights reserved.</span>
+    <span>Peer support only — not a substitute for professional care.</span>
+  </div>
+</div>
+</footer>
 <script src="scripts/dark_mode.js"></script>
 <script src="scripts/nav.js"></script>
 <script src="scripts/animations.js"></script>
@@ -226,16 +322,8 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 
 <script>
-  fetch('assets/partials/header.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-      initDarkModeToggle();
-      initNav();
-    });
-  fetch('assets/partials/footer.html')
-    .then(r => r.text())
-    .then(html => { document.getElementById('footer').innerHTML = html; });
+  initDarkModeToggle();
+  initNav();
 </script>
 </body>
 </html>
