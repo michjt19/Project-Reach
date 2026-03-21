@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lora } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import Nav from "@/components/layout/Nav";
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -32,7 +34,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${playfair.variable} ${lora.variable} font-body`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Nav />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
