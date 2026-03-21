@@ -18,6 +18,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.thereachcommunity.com'),
   title: "Project Reach",
   description: "Free peer support online",
 };

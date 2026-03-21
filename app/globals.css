@@ -3,6 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --font-heading: "Playfair Display", serif;
-  --font-body: "Lora", serif;
+  --color-primary: #2D4A3E;
+  --color-accent: #C4622D;
+  --color-bg: #FAF7F2;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F5EDE3;
+  --color-text: #1A1714;
+  --color-text-muted: #5A4F45;
+  --color-border: #E5DDD5;
+  --color-warning-bg: #FFF5E6;
+  --color-warning-border: #E8B47C;
+  --color-warning-text: #7A3A10;
+}
+
+.dark {
+  --color-primary: #6BAF96;
+  --color-accent: #D4895A;
+  --color-bg: #1A1714;
+  --color-surface: #2A2420;
+  --color-surface-hover: #352E28;
+  --color-text: #EDE5D8;
+  --color-text-muted: #9E9286;
+  --color-border: #3D3530;
+  --color-warning-bg: #3D2B10;
+  --color-warning-border: #8B6020;
+  --color-warning-text: #F5C07A;
 }

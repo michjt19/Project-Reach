@@ -10,13 +10,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: { DEFAULT: "#2D4A3E" },
-        accent: { DEFAULT: "#C4622D" },
-        background: { DEFAULT: "#FAF7F2" },
-        surface: { DEFAULT: "#FFFFFF" },
-        "text-base": { DEFAULT: "#1A1714" },
-        "text-muted": { DEFAULT: "#5A4F45" },
-        border: { DEFAULT: "#E5DDD5" },
+        primary: {
+          DEFAULT: 'var(--color-primary)',
+        },
+        accent: {
+          DEFAULT: 'var(--color-accent)',
+        },
+        background: {
+          DEFAULT: 'var(--color-bg)',
+        },
+        surface: {
+          DEFAULT: 'var(--color-surface)',
+          hover: 'var(--color-surface-hover)',
+        },
+        'text-base': {
+          DEFAULT: 'var(--color-text)',
+        },
+        'text-muted': {
+          DEFAULT: 'var(--color-text-muted)',
+        },
+        border: {
+          DEFAULT: 'var(--color-border)',
+        },
+        warning: {
+          bg: 'var(--color-warning-bg)',
+          border: 'var(--color-warning-border)',
+          text: 'var(--color-warning-text)',
+        },
       },
       fontFamily: {
         heading: ["var(--font-heading)", "serif"],
