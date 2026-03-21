@@ -9,8 +9,6 @@ module.exports = {
     ],
   },
   exclude: ['/api/*'],
-  changefreq: 'weekly',
-  priority: 0.7,
   // Higher priority for key pages
   transform: async (config, path) => ({
     loc: path,
@@ -18,6 +16,5 @@ module.exports = {
     priority: ['/', '/get-support', '/about', '/resources', '/donate'].includes(path) ? 1.0
       : ['/team', '/impact', '/volunteer', '/intake'].includes(path) ? 0.8
       : 0.7,
-    lastmod: new Date().toISOString(),
   }),
 }

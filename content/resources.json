@@ -1,0 +1,170 @@
+[
+  {
+    "name": "988 Suicide & Crisis Lifeline",
+    "description": "Free 24/7 crisis support via call or text. Dial or text 988.",
+    "category": "Crisis",
+    "url": "https://988lifeline.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Crisis Text Line",
+    "description": "Text HOME to 741741 for free, confidential 24/7 crisis counseling via text message.",
+    "category": "Crisis",
+    "url": "https://www.crisistextline.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Veterans Crisis Line",
+    "description": "Free 24/7 crisis support for veterans and their families. Call 988 and press 1, or text 838255.",
+    "category": "Crisis",
+    "url": "https://www.veteranscrisisline.net",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Trans Lifeline",
+    "description": "Peer support hotline run by and for trans people. Call 877-565-8860.",
+    "category": "Crisis",
+    "url": "https://translifeline.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "The Trevor Project",
+    "description": "Crisis intervention and suicide prevention for LGBTQ+ young people. Call 1-866-488-7386.",
+    "category": "Crisis",
+    "url": "https://www.thetrevorproject.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "NAMI (National Alliance on Mental Illness)",
+    "description": "Education, peer support groups, advocacy, and a helpline for people affected by mental illness.",
+    "category": "General",
+    "url": "https://www.nami.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Mental Health America",
+    "description": "Online mental health screening tools, resources, and peer advocacy for everyone.",
+    "category": "General",
+    "url": "https://www.mhanational.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "7 Cups",
+    "description": "Free anonymous online chat with trained listeners, available 24/7 for emotional support.",
+    "category": "General",
+    "url": "https://www.7cups.com",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Open Path Collective",
+    "description": "Affordable therapy at $30–$80 per session from licensed therapists for individuals, couples, and children.",
+    "category": "General",
+    "url": "https://openpathcollective.org",
+    "free": false,
+    "national": true
+  },
+  {
+    "name": "PsychCentral",
+    "description": "Mental health articles, quizzes, and news reviewed by licensed professionals.",
+    "category": "General",
+    "url": "https://psychcentral.com",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "SAMHSA National Helpline",
+    "description": "Free, confidential 24/7 treatment referral and information service. Call 1-800-662-4357.",
+    "category": "Hotlines",
+    "url": "https://www.samhsa.gov/find-help/national-helpline",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "SAMHSA Disaster Distress Helpline",
+    "description": "24/7 crisis counseling for people experiencing distress after a disaster. Call 1-800-985-5990.",
+    "category": "Hotlines",
+    "url": "https://www.samhsa.gov/find-help/disaster-distress-helpline",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Project Reach",
+    "description": "Free peer support via chat or text — real humans, no judgment, no waitlist. Text +1 (901) 492-1712.",
+    "category": "Hotlines",
+    "url": "https://www.thereachcommunity.com/get-support",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "ADAA (Anxiety & Depression Association of America)",
+    "description": "Find therapists, self-help tools, and research-backed resources for anxiety, depression, and related conditions.",
+    "category": "Anxiety",
+    "url": "https://adaa.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Headspace",
+    "description": "Guided meditation and mindfulness exercises for stress relief and better sleep. Free basics available.",
+    "category": "Anxiety",
+    "url": "https://www.headspace.com",
+    "free": false,
+    "national": true
+  },
+  {
+    "name": "Calm",
+    "description": "Meditation, sleep stories, and breathing exercises to manage stress and anxiety. Free trial available.",
+    "category": "Anxiety",
+    "url": "https://www.calm.com",
+    "free": false,
+    "national": true
+  },
+  {
+    "name": "Depression and Bipolar Support Alliance (DBSA)",
+    "description": "Free in-person and online support groups for people living with depression or bipolar disorder.",
+    "category": "Depression",
+    "url": "https://www.dbsalliance.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Families for Depression Awareness",
+    "description": "Resources and support for families and caregivers of people with depression or bipolar disorder.",
+    "category": "Depression",
+    "url": "https://www.familyaware.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Alcoholics Anonymous (AA)",
+    "description": "Free worldwide peer support for people recovering from alcohol use disorder.",
+    "category": "Substance Use",
+    "url": "https://www.aa.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "Narcotics Anonymous (NA)",
+    "description": "Free worldwide peer support for people recovering from addiction to drugs.",
+    "category": "Substance Use",
+    "url": "https://www.na.org",
+    "free": true,
+    "national": true
+  },
+  {
+    "name": "SMART Recovery",
+    "description": "Free science-based addiction support meetings online and in-person, focused on self-empowerment.",
+    "category": "Substance Use",
+    "url": "https://www.smartrecovery.org",
+    "free": true,
+    "national": true
+  }
+]

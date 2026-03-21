@@ -65,10 +65,10 @@ export default function DonatePage() {
         <section className="py-16 px-4">
           <div className="max-w-2xl mx-auto">
             <h2 className="font-heading text-2xl font-bold text-text-base text-center mb-8">Make a Donation</h2>
-            {/* TODO: Replace GIVE_LIVELY_CAMPAIGN_ID with the actual campaign ID from givelively.org */}
+            {/* Set NEXT_PUBLIC_GIVE_LIVELY_CAMPAIGN_ID env var to your Give Lively campaign ID */}
             <div
               data-gl-widget
-              data-campaign-id="GIVE_LIVELY_CAMPAIGN_ID"
+              data-campaign-id={process.env.NEXT_PUBLIC_GIVE_LIVELY_CAMPAIGN_ID ?? ''}
               className="min-h-[300px] flex items-center justify-center border border-dashed border-border rounded-xl text-text-muted text-sm"
             >
               Donation widget loading…

@@ -3,7 +3,6 @@ export default {
   name: 'siteStats',
   title: 'Site Statistics',
   type: 'document',
-  __experimental_actions: ['update', 'publish'],
   fields: [
     { name: 'peopleSupported', title: 'People Supported', type: 'number', initialValue: 1200 },
     { name: 'volunteerHours', title: 'Volunteer Hours', type: 'number', initialValue: 3400 },

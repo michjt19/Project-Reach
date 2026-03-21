@@ -128,6 +128,7 @@ export default function IntakePage() {
               ]).map((opt) => (
                 <button
                   key={opt.id}
+                  type="button"
                   onClick={() => goToStep3(opt.id)}
                   className="flex items-center gap-4 p-5 rounded-xl border border-border bg-surface hover:bg-surface-hover text-left transition-colors"
                 >
@@ -140,9 +141,17 @@ export default function IntakePage() {
               ))}
             </div>
 
+            <p className="mt-6 text-center text-xs text-text-muted">
+              In crisis?{' '}
+              <a href="tel:988" className="text-primary hover:underline font-medium">Call or text 988</a>
+              {' '}or text <strong>HOME</strong> to{' '}
+              <a href="sms:741741?&body=HOME" className="text-primary hover:underline font-medium">741741</a>.
+            </p>
+
             <button
+              type="button"
               onClick={() => setStep(1)}
-              className="mt-6 text-sm text-text-muted hover:text-primary transition-colors"
+              className="mt-4 text-sm text-text-muted hover:text-primary transition-colors"
             >
               ← Back
             </button>
@@ -168,6 +177,7 @@ export default function IntakePage() {
             </p>
 
             <button
+              type="button"
               onClick={handleConnect}
               className="bg-primary text-white font-semibold px-10 py-4 rounded-lg hover:opacity-90 transition-opacity text-lg"
             >
@@ -182,6 +192,7 @@ export default function IntakePage() {
             </p>
 
             <button
+              type="button"
               onClick={() => setStep(2)}
               className="mt-4 block mx-auto text-sm text-text-muted hover:text-primary transition-colors"
             >

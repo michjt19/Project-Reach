@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /api/
+
+# Host
+Host: https://www.thereachcommunity.com
+
+# Sitemaps
+Sitemap: https://www.thereachcommunity.com/sitemap.xml

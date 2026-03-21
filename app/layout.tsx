@@ -3,6 +3,7 @@ import { Playfair_Display, Lora } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
+import CookieConsent from "@/components/ui/CookieConsent";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -37,6 +38,7 @@ export default function RootLayout({
           <Nav />
           {children}
           <Footer />
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

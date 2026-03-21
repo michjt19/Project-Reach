@@ -119,3 +119,23 @@ WHAT NOT TO CHANGE WITHOUT EXPLICIT INSTRUCTION:
 - Google Analytics measurement ID
 - Any crisis resource contact information
 - The Tawk.to widget embed code
+
+---
+
+TOKEN EFFICIENCY GUIDELINES:
+
+These apply in every response. Be mindful of tokens but use superpowers skills and subagents when they help complete work more efficiently or with higher quality.
+
+1. USE SUPERPOWERS SKILLS APPROPRIATELY. Invoke brainstorming, writing-plans, subagent-driven-development, requesting-code-review, and other skills when they genuinely improve outcomes — not reflexively for every small task.
+
+2. USE SUBAGENTS FOR PARALLELISM AND ISOLATION. Dispatch subagents for independent tasks that can run in parallel, for review loops, or to protect the main context from large outputs. Prefer direct execution for simple, quick tasks.
+
+3. READ ONLY WHAT YOU NEED. Use offset/limit parameters when reading large files. Batch independent file reads in parallel. Do not re-read files already read in the same session.
+
+4. NO PREAMBLE OR RECAP. Do not restate what you are about to do, summarize what you just did, or explain your reasoning unless asked. One-sentence status updates only.
+
+5. NO TRAILING SUMMARIES. Do not end responses with bullet lists of what was changed. The diff is visible.
+
+6. COMMIT ONLY WHEN ASKED. Never create git commits unless the user explicitly says to commit.
+
+7. RESPONSES ARE SHORT. Default to 1–3 sentences of prose between tool calls. Detailed explanation only when the user asks a question that requires it.
