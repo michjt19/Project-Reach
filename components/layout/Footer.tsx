@@ -16,6 +16,7 @@ const navColumns = [
       { href: '/faq', label: 'FAQ' },
       { href: '/community', label: 'Community' },
       { href: '/team', label: 'Our Team' },
+      { href: '/donate', label: 'Donate' },
     ],
   },
   {

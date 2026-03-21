@@ -261,6 +261,16 @@ export default function Nav() {
               </ul>
             )}
           </li>
+
+          {/* Donate button */}
+          <li>
+            <Link
+              href="/donate"
+              className="bg-accent text-white text-sm font-semibold px-4 py-1.5 rounded-full hover:opacity-90 transition-opacity"
+            >
+              Donate
+            </Link>
+          </li>
         </ul>
 
         {/* Right-side actions */}
@@ -349,6 +359,15 @@ export default function Nav() {
                   ))}
                 </ul>
               )}
+            </li>
+            <li>
+              <Link
+                href="/donate"
+                className="block py-2 text-sm font-semibold text-accent hover:opacity-80 transition-opacity"
+                onClick={() => setMobileOpen(false)}
+              >
+                Donate
+              </Link>
             </li>
           </ul>
         </div>
