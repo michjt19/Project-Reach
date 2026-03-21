@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 
 type Step = 1 | 2 | 3
 type ContactMethod = 'chat' | 'text' | 'community'
@@ -32,8 +31,7 @@ export default function IntakePage() {
     if (contactMethod === 'chat') {
       const attrs: Record<string, string> = { 'intake-topic': topic }
       if (name) attrs['name'] = name
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const tawk = (window as any).Tawk_API
+      const tawk = window.Tawk_API
       if (tawk?.setAttributes) {
         tawk.setAttributes(attrs, () => tawk?.maximize?.())
       } else {
@@ -50,7 +48,7 @@ export default function IntakePage() {
     <main id="main-content" className="min-h-[70vh] py-16 px-4">
       <div className="max-w-xl mx-auto">
         {/* Progress bar */}
-        <div className="flex items-center gap-2 mb-10" aria-label="Step progress" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={3}>
+        <div className="flex items-center gap-2 mb-10" aria-label="Step progress" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={3} aria-valuetext={`Step ${step} of 3`}>
           {([1, 2, 3] as Step[]).map((s) => (
             <div key={s} className={`flex-1 h-1.5 rounded-full transition-colors duration-300 ${step >= s ? 'bg-primary' : 'bg-border'}`} />
           ))}

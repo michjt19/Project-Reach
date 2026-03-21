@@ -14,6 +14,7 @@ declare global {
       maximize?: () => void
       showWidget?: () => void
       hideWidget?: () => void
+      setAttributes?: (attrs: Record<string, string>, callback?: () => void) => void
       [key: string]: unknown
     }
   }
