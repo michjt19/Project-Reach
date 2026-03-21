@@ -1,0 +1,14 @@
+# Worktrees
+.worktrees/
+
+# Node / Next.js (for Phase 1 migration)
+node_modules/
+.next/
+.env
+.env.local
+.env*.local
+out/
+
+# OS
+.DS_Store
+Thumbs.db
