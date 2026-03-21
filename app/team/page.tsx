@@ -29,7 +29,7 @@ function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> {
 }
 
 function getInitials(name: string) {
-  return name.split(' ').map(w => w[0]).filter(Boolean).slice(0, 2).join('')
+  return name.split(/\s+/).filter(Boolean).map(w => w.charAt(0)).slice(0, 2).join('')
 }
 
 export default async function TeamPage() {
