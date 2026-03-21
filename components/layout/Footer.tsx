@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import NewsletterForm from '@/components/ui/NewsletterForm'
 
 const navColumns = [
   {
@@ -8,10 +9,13 @@ const navColumns = [
       { href: '/', label: 'Home' },
       { href: '/about', label: 'About' },
       { href: '/get-support', label: 'Get Support' },
+      { href: '/resources', label: 'Resources' },
       { href: '/volunteer', label: 'Volunteer' },
       { href: '/blog', label: 'Blog' },
+      { href: '/impact', label: 'Our Impact' },
       { href: '/faq', label: 'FAQ' },
       { href: '/community', label: 'Community' },
+      { href: '/team', label: 'Our Team' },
     ],
   },
   {
@@ -28,7 +32,7 @@ export default function Footer() {
   return (
     <footer id="footer" className="bg-surface border-t border-border mt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" aria-label="Project Reach Home" className="inline-block mb-4">
@@ -97,6 +101,11 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+
+          {/* Newsletter column */}
+          <div>
+            <NewsletterForm />
+          </div>
 
           {/* Crisis & Contact column */}
           <div>

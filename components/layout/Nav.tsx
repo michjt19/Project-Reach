@@ -11,6 +11,9 @@ declare global {
   interface Window {
     Tawk_API?: {
       toggle?: () => void
+      maximize?: () => void
+      showWidget?: () => void
+      hideWidget?: () => void
       [key: string]: unknown
     }
   }
@@ -27,9 +30,11 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/get-support', label: 'Get Support' },
+  { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },
   { href: '/community', label: 'Community' },
+  { href: '/team', label: 'Team' },
 ]
 
 const volunteerLinks = [

@@ -133,3 +133,23 @@ export async function getSiteStats(): Promise<SiteStats> {
     return DEFAULT_STATS
   }
 }
+
+// ─── Team Members ───────────────────────────────────────────────────────────
+
+export interface TeamMember {
+  _id?: string  // optional — static fallback data has no Sanity _id
+  name: string
+  role: string
+  bio?: string
+  group?: string
+  photo?: { asset: { _ref: string }; hotspot?: object }
+}
+
+/** All team members ordered by display order field */
+export async function getTeamMembers(): Promise<TeamMember[]> {
+  const client = getSanityClient()
+  if (!client) return []
+  return client.fetch(
+    `*[_type == "teamMember"] | order(order asc) { _id, name, role, bio, group, photo }`
+  )
+}
