@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/layout/JsonLd'
 import { buildMetadata } from '@/lib/seo'
 import { getAllPostSlugs, getPost, getRelatedPosts } from '@/lib/sanity'
-import { getStaticPost, getStaticPosts } from '@/lib/blog'
 import { PortableText } from '@portabletext/react'
 
 interface Props {
@@ -12,32 +11,16 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const sanitySlugObjects = await getAllPostSlugs()
-  const sanityParams = sanitySlugObjects.map((s) => ({ slug: s }))
-  const staticParams = getStaticPosts().map((p) => ({ slug: p.slug }))
-  // Merge, deduplicating by slug
-  const seen = new Set(sanityParams.map((p) => p.slug))
-  const merged = [...sanityParams]
-  for (const p of staticParams) {
-    if (!seen.has(p.slug)) merged.push(p)
-  }
-  return merged
+  const slugs = await getAllPostSlugs()
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(params.slug)
-  if (post) {
-    return buildMetadata({
-      title: `${post.title} | Project Reach Blog`,
-      description: post.excerpt,
-      canonical: `https://www.thereachcommunity.com/blog/${params.slug}`,
-    })
-  }
-  const staticPost = getStaticPost(params.slug)
-  if (!staticPost) return {}
+  if (!post) return {}
   return buildMetadata({
-    title: `${staticPost.title} | Project Reach Blog`,
-    description: staticPost.excerpt,
+    title: `${post.title} | Project Reach Blog`,
+    description: post.excerpt,
     canonical: `https://www.thereachcommunity.com/blog/${params.slug}`,
   })
 }
@@ -47,25 +30,18 @@ function formatDate(iso: string) {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const sanityPost = await getPost(params.slug)
-  const staticPost = sanityPost ? null : getStaticPost(params.slug)
+  const post = await getPost(params.slug)
+  if (!post) notFound()
 
-  if (!sanityPost && !staticPost) notFound()
-
-  const title = sanityPost?.title ?? staticPost!.title
-  const excerpt = sanityPost?.excerpt ?? staticPost!.excerpt
-  const publishedAt = sanityPost?.publishedAt ?? staticPost!.publishedAt
-  const categories = sanityPost?.categories ?? staticPost!.categories ?? []
-  const estimatedReadingTime = sanityPost?.estimatedReadingTime ?? staticPost!.estimatedReadingTime
-
-  const related = sanityPost ? await getRelatedPosts(params.slug, categories) : []
+  const { title, excerpt, publishedAt, categories = [], estimatedReadingTime } = post
+  const related = await getRelatedPosts(params.slug, categories)
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: title,
-    description: excerpt,
-    datePublished: publishedAt,
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
     author: {
       '@type': 'Organization',
       name: 'Project Reach',
@@ -131,11 +107,7 @@ export default async function BlogPostPage({ params }: Props) {
             prose-headings:font-heading prose-headings:text-text-base
             prose-a:text-primary prose-a:no-underline hover:prose-a:underline
             prose-strong:text-text-base prose-blockquote:border-accent">
-            {sanityPost ? (
-              <PortableText value={sanityPost.body} />
-            ) : (
-              <div dangerouslySetInnerHTML={{ __html: staticPost!.htmlBody }} />
-            )}
+            <PortableText value={post.body} />
           </div>
 
           {/* Footer */}

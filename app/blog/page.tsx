@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { JsonLd } from '@/components/layout/JsonLd'
 import { buildMetadata } from '@/lib/seo'
 import { getAllPosts } from '@/lib/sanity'
-import { getStaticPosts } from '@/lib/blog'
 import BlogIndex from '@/components/ui/BlogIndex'
 
 export const metadata: Metadata = buildMetadata({
@@ -22,30 +21,12 @@ const schema = {
 }
 
 export default async function BlogPage() {
-  const fallback = getStaticPosts().map((p) => ({
-    slug: p.slug,
-    category: p.categories[0] ?? '',
+  const posts = (await getAllPosts()).map((p) => ({
+    slug: p.slug.current,
+    category: p.categories?.[0] ?? '',
     title: p.title,
     excerpt: p.excerpt,
   }))
-
-  // Fetch from Sanity; fall back to static list if env vars not configured
-  let posts: { slug: string; category: string; title: string; excerpt: string }[] = fallback
-  if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
-    try {
-      const sanityPosts = await getAllPosts()
-      if (sanityPosts.length > 0) {
-        posts = sanityPosts.map((p) => ({
-          slug: p.slug.current,
-          category: p.categories?.[0] ?? '',
-          title: p.title,
-          excerpt: p.excerpt,
-        }))
-      }
-    } catch {
-      // Sanity unavailable — use static fallback
-    }
-  }
 
   return (
     <>
