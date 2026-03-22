@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
 
   if (!process.env.RESEND_API_KEY) {
     // Dev mode: log and return success so form works without credentials
-    console.log('[volunteer form] RESEND_API_KEY not set — would have sent:', { name, email })
+    console.log('[volunteer form] RESEND_API_KEY not set — skipping email send (dev mode)')
     return NextResponse.json({ ok: true })
   }
 
@@ -74,7 +74,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true })
   } catch (err) {
-    console.error('[volunteer form] Resend error:', err)
+    const message = err instanceof Error ? err.message : 'Unknown error'
+    console.error('[volunteer form] Resend error:', message)
     return NextResponse.json({ error: 'Failed to send email' }, { status: 500 })
   }
 }

@@ -10,9 +10,22 @@ declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void
     dataLayer?: unknown[]
+    Tawk_LoadStart?: Date
   }
 }
 
+function loadTawk() {
+  if (typeof window === 'undefined') return
+  if (document.querySelector('script[src*="tawk.to"]')) return // already loaded
+  window.Tawk_LoadStart = new Date()
+  const s1 = document.createElement('script')
+  s1.async = true
+  s1.src = 'https://embed.tawk.to/6843b2759ed8c2190a6d55fb/1jjvkm9qn'
+  s1.charset = 'UTF-8'
+  s1.setAttribute('crossorigin', '*')
+  const s0 = document.getElementsByTagName('script')[0]
+  s0.parentNode!.insertBefore(s1, s0)
+}
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false)
@@ -33,6 +46,7 @@ export default function CookieConsent() {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored === 'accepted') {
       window.gtag?.('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' })
+      loadTawk()
     } else if (!stored) {
       setVisible(true)
     }
@@ -42,6 +56,7 @@ export default function CookieConsent() {
     localStorage.setItem(STORAGE_KEY, 'accepted')
     setVisible(false)
     window.gtag?.('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' })
+    loadTawk()
   }
 
   function decline() {
@@ -60,8 +75,9 @@ export default function CookieConsent() {
     >
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <p className="text-sm text-text-muted max-w-xl">
-          We use cookies to understand how visitors use our site (Google Analytics). No personal data is shared with third parties. See our{' '}
-          <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
+          We use cookies to enable live chat (Tawk.to) and understand how visitors use our site (Google Analytics). See our{' '}
+          <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link> and{' '}
+          <Link href="/cookies" className="text-primary hover:underline">Cookie Policy</Link>.
         </p>
         <div className="flex gap-3 flex-shrink-0">
           <button

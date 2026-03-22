@@ -11,14 +11,25 @@ export default function IntakePage() {
   const [topic, setTopic] = useState('')
   const [contactMethod, setContactMethod] = useState<ContactMethod | null>(null)
   const [topicError, setTopicError] = useState('')
+  const [ageConfirmed, setAgeConfirmed] = useState(false)
+  const [ageError, setAgeError] = useState('')
 
   function goToStep2(e: React.FormEvent) {
     e.preventDefault()
+    let hasError = false
     if (!topic.trim()) {
       setTopicError("Please tell us what's on your mind.")
-      return
+      hasError = true
+    } else {
+      setTopicError('')
     }
-    setTopicError('')
+    if (!ageConfirmed) {
+      setAgeError('Please confirm that you are 13 or older to continue.')
+      hasError = true
+    } else {
+      setAgeError('')
+    }
+    if (hasError) return
     setStep(2)
   }
 
@@ -96,6 +107,31 @@ export default function IntakePage() {
               {topicError && (
                 <p id="topic-error" role="alert" className="mt-1 text-xs text-red-600 dark:text-red-400">
                   {topicError}
+                </p>
+              )}
+            </div>
+
+            <div className="mb-6">
+              <label className={`flex items-start gap-3 cursor-pointer ${ageError ? 'text-red-600 dark:text-red-400' : 'text-text-muted'}`}>
+                <input
+                  type="checkbox"
+                  checked={ageConfirmed}
+                  onChange={(e) => { setAgeConfirmed(e.target.checked); if (ageError) setAgeError('') }}
+                  required
+                  aria-required="true"
+                  aria-describedby={ageError ? 'age-error' : undefined}
+                  className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-border accent-primary"
+                />
+                <span className="text-sm">
+                  I confirm that I am 13 years of age or older.{' '}
+                  <span className="text-text-muted font-normal">
+                    (Users under 13 may not use this platform.)
+                  </span>
+                </span>
+              </label>
+              {ageError && (
+                <p id="age-error" role="alert" className="mt-1 text-xs text-red-600 dark:text-red-400">
+                  {ageError}
                 </p>
               )}
             </div>
