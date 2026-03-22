@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import NewsletterForm from '@/components/ui/NewsletterForm'
 
 const navColumns = [
   {
@@ -16,7 +15,6 @@ const navColumns = [
       { href: '/faq', label: 'FAQ' },
       { href: '/community', label: 'Community' },
       { href: '/team', label: 'Our Team' },
-      { href: '/donate', label: 'Donate' },
     ],
   },
   {
@@ -103,9 +101,34 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Newsletter column */}
+          {/* Follow Us column */}
           <div>
-            <NewsletterForm />
+            <h4 className="font-heading text-sm font-semibold text-text-base uppercase tracking-wide mb-3">
+              Follow Us
+            </h4>
+            <p className="text-sm text-text-muted mb-3 leading-relaxed">
+              Stay connected with the Project Reach community.
+            </p>
+            <ul className="space-y-2 list-none m-0 p-0">
+              <li>
+                <a href="https://www.tiktok.com/@thereachcommunity" target="_blank" rel="noopener noreferrer"
+                   className="text-sm text-text-muted hover:text-primary transition-colors duration-150">
+                  TikTok — @thereachcommunity
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/people/The-Reach-Community/61580683322402/" target="_blank" rel="noopener noreferrer"
+                   className="text-sm text-text-muted hover:text-primary transition-colors duration-150">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/the_reach_community/" target="_blank" rel="noopener noreferrer"
+                   className="text-sm text-text-muted hover:text-primary transition-colors duration-150">
+                  Instagram — @the_reach_community
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Crisis & Contact column */}

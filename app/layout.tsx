@@ -45,6 +45,18 @@ export default function RootLayout({
           <Footer />
           <CookieConsent />
         </ThemeProvider>
+        {/* GA4 — loads immediately with consent denied by default */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-S8M7YHYFMV"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });
+          gtag('config', 'G-S8M7YHYFMV');
+        `}</Script>
         <Script
           id="tawk-to"
           strategy="afterInteractive"

@@ -13,24 +13,6 @@ declare global {
   }
 }
 
-function enableAnalytics() {
-  if (typeof window === 'undefined') return
-  // Load GA4 script dynamically after consent
-  if (!document.getElementById('ga4-script')) {
-    const s = document.createElement('script')
-    s.id = 'ga4-script'
-    s.async = true
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-S8M7YHYFMV'
-    document.head.appendChild(s)
-  }
-  window.dataLayer = window.dataLayer ?? []
-  window.gtag = function gtag() {
-    // eslint-disable-next-line prefer-rest-params
-    window.dataLayer!.push(arguments)
-  }
-  window.gtag('js', new Date())
-  window.gtag('config', 'G-S8M7YHYFMV')
-}
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false)
@@ -50,7 +32,7 @@ export default function CookieConsent() {
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored === 'accepted') {
-      enableAnalytics()
+      window.gtag?.('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' })
     } else if (!stored) {
       setVisible(true)
     }
@@ -58,8 +40,8 @@ export default function CookieConsent() {
 
   function accept() {
     localStorage.setItem(STORAGE_KEY, 'accepted')
-    enableAnalytics()
     setVisible(false)
+    window.gtag?.('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' })
   }
 
   function decline() {
