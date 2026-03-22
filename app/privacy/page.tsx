@@ -62,7 +62,7 @@ export default function PrivacyPage() {
             <p className="text-sm text-text-muted mb-8">Effective Date: June 6th, 2025</p>
 
             <h2 id="privacy-matters">1. Your Privacy Matters</h2>
-            <p>Reach Collective is committed to protecting your privacy. We offer anonymous, peer-based support — without requiring personal information or account creation.</p>
+            <p>Project Reach is committed to protecting your privacy. We offer anonymous, peer-based support — without requiring personal information or account creation.</p>
 
             <h2 id="what-we-collect">2. What We Collect</h2>
             <p>We collect as little as possible. No personal identifying information is required to use our site or chat. However, to operate the service, we may capture:</p>

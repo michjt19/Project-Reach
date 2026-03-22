@@ -60,7 +60,7 @@ export default function TermsPage() {
             <p className="text-sm text-text-muted mb-8">Effective Date: June 6th, 2025</p>
 
             <h2 id="introduction">1. Introduction</h2>
-            <p>Reach Collective is a peer-powered emotional support space. By using our website, chat widget, or SMS line, you agree to these Terms. Please read them carefully.</p>
+            <p>Project Reach is a peer-powered emotional support space. By using our website, chat widget, or SMS line, you agree to these Terms. Please read them carefully.</p>
 
             <h2 id="what-we-offer">2. What We Offer</h2>
             <p>We provide non-clinical, anonymous peer support. Volunteers are trained listeners — not licensed therapists or emergency responders. If you are in immediate danger or need clinical help, please call <a href="tel:988">988</a> or <a href="tel:911">911</a>.</p>

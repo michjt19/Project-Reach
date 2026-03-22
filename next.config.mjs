@@ -24,6 +24,7 @@ const nextConfig = {
       { source: '/blog/how-to-talk-about-mental-health.html',              destination: '/blog/how-to-talk-about-mental-health',              permanent: true },
       { source: '/blog/signs-you-need-someone-to-talk-to.html',            destination: '/blog/signs-you-need-someone-to-talk-to',            permanent: true },
       { source: '/blog/what-to-expect-from-online-peer-support.html',      destination: '/blog/what-to-expect-from-online-peer-support',      permanent: true },
+      { source: '/donate',                                                   destination: '/get-support',                                        permanent: true },
     ]
   },
 }
