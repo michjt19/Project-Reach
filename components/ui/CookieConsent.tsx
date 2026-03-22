@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 const STORAGE_KEY = 'reach_cookie_consent'
@@ -33,6 +34,18 @@ function enableAnalytics() {
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false)
+  const pathname = usePathname()
+  const prevPath = useRef<string | null>(null)
+
+  useEffect(() => {
+    if (prevPath.current !== null && prevPath.current !== pathname) {
+      const consent = localStorage.getItem(STORAGE_KEY)
+      if (consent === 'accepted' && typeof window.gtag === 'function') {
+        window.gtag('event', 'page_view', { page_path: pathname })
+      }
+    }
+    prevPath.current = pathname
+  }, [pathname])
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY)
