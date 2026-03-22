@@ -4,33 +4,70 @@ import { useState } from 'react'
 
 type Step = 1 | 2 | 3
 type ContactMethod = 'chat' | 'text' | 'community'
+type AgeGroup = 'minor' | 'adult'
 
 export default function IntakePage() {
   const [step, setStep] = useState<Step>(1)
   const [name, setName] = useState('')
   const [topic, setTopic] = useState('')
+  const [dob, setDob] = useState('')
   const [contactMethod, setContactMethod] = useState<ContactMethod | null>(null)
   const [topicError, setTopicError] = useState('')
-  const [ageConfirmed, setAgeConfirmed] = useState(false)
-  const [ageError, setAgeError] = useState('')
+  const [dobError, setDobError] = useState('')
+  const [ageGroup, setAgeGroup] = useState<AgeGroup | null>(null)
+  const [ageBlocked, setAgeBlocked] = useState(false)
+  const [verifying, setVerifying] = useState(false)
 
-  function goToStep2(e: React.FormEvent) {
+  // Computed once per render — used as the max attribute for the DOB input
+  const maxDob = new Date().toISOString().split('T')[0]
+
+  async function goToStep2(e: React.FormEvent) {
     e.preventDefault()
     let hasError = false
+
+    if (!dob) {
+      setDobError('Please enter your date of birth to continue.')
+      hasError = true
+    } else {
+      setDobError('')
+    }
+
     if (!topic.trim()) {
       setTopicError("Please tell us what's on your mind.")
       hasError = true
     } else {
       setTopicError('')
     }
-    if (!ageConfirmed) {
-      setAgeError('Please confirm that you are 13 or older to continue.')
-      hasError = true
-    } else {
-      setAgeError('')
-    }
+
     if (hasError) return
-    setStep(2)
+
+    setVerifying(true)
+    try {
+      const res = await fetch('/api/verify-age', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ dob }),
+      })
+
+      if (!res.ok) {
+        setDobError('Unable to verify age. Please check the date and try again.')
+        return
+      }
+
+      const data: { ageGroup: 'under13' | 'minor' | 'adult' } = await res.json()
+
+      if (data.ageGroup === 'under13') {
+        setAgeBlocked(true)
+        return
+      }
+
+      setAgeGroup(data.ageGroup)
+      setStep(2)
+    } catch {
+      setDobError('Unable to verify age. Please try again.')
+    } finally {
+      setVerifying(false)
+    }
   }
 
   function goToStep3(method: ContactMethod) {
@@ -55,6 +92,55 @@ export default function IntakePage() {
     }
   }
 
+  // Under-13 blocking screen — gentle, with crisis resources
+  if (ageBlocked) {
+    return (
+      <main id="main-content" className="min-h-[70vh] py-16 px-4">
+        <div className="max-w-xl mx-auto text-center">
+          <h1 className="font-heading text-3xl font-bold text-text-base mb-4">We&apos;re sorry — we can&apos;t connect you here.</h1>
+          <p className="text-text-muted mb-6">
+            ReachCommunity requires users to be at least 13 years of age. We are not able to process your request.
+            No information from this session has been stored.
+          </p>
+          <p className="text-text-muted mb-8">
+            If you need support right now, these services are available to everyone:
+          </p>
+          <div className="flex flex-col gap-3 text-left max-w-sm mx-auto">
+            <a href="tel:988" className="flex items-center gap-3 p-4 rounded-xl border border-border bg-surface hover:bg-surface-hover transition-colors">
+              <span aria-hidden="true" className="text-2xl">📞</span>
+              <div>
+                <p className="font-semibold text-text-base">988 Suicide &amp; Crisis Lifeline</p>
+                <p className="text-sm text-text-muted">Call or text 988 — free, 24/7</p>
+              </div>
+            </a>
+            <a href="sms:741741?&body=HOME" className="flex items-center gap-3 p-4 rounded-xl border border-border bg-surface hover:bg-surface-hover transition-colors">
+              <span aria-hidden="true" className="text-2xl">💬</span>
+              <div>
+                <p className="font-semibold text-text-base">Crisis Text Line</p>
+                <p className="text-sm text-text-muted">Text HOME to 741741 — free, 24/7</p>
+              </div>
+            </a>
+            <a href="tel:911" className="flex items-center gap-3 p-4 rounded-xl border border-border bg-surface hover:bg-surface-hover transition-colors">
+              <span aria-hidden="true" className="text-2xl">🚨</span>
+              <div>
+                <p className="font-semibold text-text-base">Emergency Services</p>
+                <p className="text-sm text-text-muted">Call 911 if you are in immediate danger</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+    )
+  }
+
+  // Available connection methods — minor users (13–17) cannot access Live Chat
+  // to prevent transmission of their data to Tawk.to third-party services
+  const connectionOptions: { id: ContactMethod; emoji: string; label: string; sub: string }[] = [
+    ...(ageGroup !== 'minor' ? [{ id: 'chat' as const, emoji: '💬', label: 'Live Chat', sub: 'Talk with a volunteer right now' }] : []),
+    { id: 'text', emoji: '📱', label: 'Text / SMS', sub: 'Text us at +1 (901) 492-1712' },
+    { id: 'community', emoji: '🤝', label: 'Community Forum', sub: 'Connect with others who understand' },
+  ]
+
   return (
     <main id="main-content" className="min-h-[70vh] py-16 px-4">
       <div className="max-w-xl mx-auto">
@@ -72,6 +158,31 @@ export default function IntakePage() {
             <p className="text-text-muted mb-8">
               Share a little so we can connect you the right way. Everything is optional except what&apos;s on your mind.
             </p>
+
+            {/* DOB — must appear first, before any other personal data */}
+            <div className="mb-5">
+              <label htmlFor="intake-dob" className="block text-sm font-medium text-text-base mb-1">
+                Date of birth{' '}
+                <span className="text-accent" aria-hidden="true">*</span>
+                <span className="text-text-muted font-normal"> (required to confirm you meet our minimum age requirement)</span>
+              </label>
+              <input
+                id="intake-dob"
+                type="date"
+                value={dob}
+                max={maxDob}
+                onChange={(e) => { setDob(e.target.value); if (dobError) setDobError('') }}
+                required
+                aria-required="true"
+                aria-describedby={dobError ? 'dob-error' : undefined}
+                className="w-full border border-border rounded-lg px-4 py-2.5 text-sm bg-surface text-text-base focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              {dobError && (
+                <p id="dob-error" role="alert" className="mt-1 text-xs text-red-600 dark:text-red-400">
+                  {dobError}
+                </p>
+              )}
+            </div>
 
             <div className="mb-5">
               <label htmlFor="intake-name" className="block text-sm font-medium text-text-base mb-1">
@@ -111,36 +222,12 @@ export default function IntakePage() {
               )}
             </div>
 
-            <div className="mb-6">
-              <label className={`flex items-start gap-3 cursor-pointer ${ageError ? 'text-red-600 dark:text-red-400' : 'text-text-muted'}`}>
-                <input
-                  type="checkbox"
-                  checked={ageConfirmed}
-                  onChange={(e) => { setAgeConfirmed(e.target.checked); if (ageError) setAgeError('') }}
-                  required
-                  aria-required="true"
-                  aria-describedby={ageError ? 'age-error' : undefined}
-                  className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-border accent-primary"
-                />
-                <span className="text-sm">
-                  I confirm that I am 13 years of age or older.{' '}
-                  <span className="text-text-muted font-normal">
-                    (Users under 13 may not use this platform.)
-                  </span>
-                </span>
-              </label>
-              {ageError && (
-                <p id="age-error" role="alert" className="mt-1 text-xs text-red-600 dark:text-red-400">
-                  {ageError}
-                </p>
-              )}
-            </div>
-
             <button
               type="submit"
-              className="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity"
+              disabled={verifying}
+              className="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Continue →
+              {verifying ? 'Checking…' : 'Continue →'}
             </button>
 
             <p className="mt-4 text-center text-xs text-text-muted">
@@ -156,12 +243,15 @@ export default function IntakePage() {
             <h1 className="font-heading text-3xl font-bold text-text-base mb-2">How would you like to connect?</h1>
             <p className="text-text-muted mb-8">Pick whatever feels most comfortable right now.</p>
 
+            {ageGroup === 'minor' && (
+              <p className="text-sm text-text-muted bg-surface border border-border rounded-lg px-4 py-3 mb-4">
+                Live chat is not available for users under 18 — we limit third-party data sharing for minor accounts.
+                SMS and the community forum are fully available.
+              </p>
+            )}
+
             <div className="flex flex-col gap-3" role="group" aria-label="Connection method">
-              {([
-                { id: 'chat' as const, emoji: '💬', label: 'Live Chat', sub: 'Talk with a volunteer right now' },
-                { id: 'text' as const, emoji: '📱', label: 'Text / SMS', sub: 'Text us at +1 (901) 492-1712' },
-                { id: 'community' as const, emoji: '🤝', label: 'Community Forum', sub: 'Connect with others who understand' },
-              ]).map((opt) => (
+              {connectionOptions.map((opt) => (
                 <button
                   key={opt.id}
                   type="button"

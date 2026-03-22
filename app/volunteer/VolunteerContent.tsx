@@ -216,7 +216,7 @@ export default function VolunteerContent() {
                       </div>
                       <label className="flex items-start gap-3 cursor-pointer">
                         <input type="checkbox" checked={form.consent} onChange={(e) => update('consent', e.target.checked)} required className="mt-0.5 accent-primary" />
-                        <span className="text-sm text-text-base">I have read and agree to the{' '}<Link href="/code-of-conduct" target="_blank" className="text-primary hover:underline">Code of Conduct</Link> <span aria-hidden="true">*</span></span>
+                        <span className="text-sm text-text-base">I have read and agree to the{' '}<Link href="/code-of-conduct" target="_blank" className="text-primary hover:underline">Code of Conduct</Link> and the{' '}<Link href="/volunteer-agreement" target="_blank" className="text-primary hover:underline">Volunteer Listener Agreement</Link> <span aria-hidden="true">*</span></span>
                       </label>
                       {errors.consent && <p className="text-red-500 text-xs">{errors.consent}</p>}
                     </div>

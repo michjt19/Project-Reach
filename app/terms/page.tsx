@@ -67,7 +67,7 @@ export default function TermsPage() {
 
             <h2 id="acceptance">1. Acceptance of Terms</h2>
             <p>By accessing or using the website located at thereachcommunity.com (the &ldquo;Site&rdquo;) or any services offered through the Site (collectively, the &ldquo;Services&rdquo;), you (&ldquo;User&rdquo;) agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;). If you do not agree to these Terms in their entirety, you must discontinue use of the Site immediately.</p>
-            <p>These Terms constitute a legally binding agreement between you and ReachCommunity (&ldquo;ReachCommunity,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a nonprofit peer support organization.</p>
+            <p>These Terms constitute a legally binding agreement between you and ReachCommunity (&ldquo;ReachCommunity,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a peer support organization.</p>
 
             <h2 id="services">2. Description of Services</h2>
             <p>ReachCommunity provides the following services through the Site:</p>
@@ -91,8 +91,8 @@ export default function TermsPage() {
             </ul>
 
             <h2 id="eligibility">4. Eligibility</h2>
-            <p><strong>You must be at least 13 years of age to use this platform.</strong> Use by anyone under the age of 13 is strictly prohibited. If you are under 13, do not use our chat service or submit any information through this Site. We require an affirmative age confirmation during the support intake process.</p>
-            <p>If you are between 13 and 17 years of age, you may use this platform only with the knowledge and awareness of a parent or legal guardian. By using this Site, users aged 13–17 represent that a parent or guardian is aware of their use.</p>
+            <p><strong>You must be at least 13 years of age to use this platform.</strong> Use by anyone under the age of 13 is strictly prohibited. If you are under 13, do not use our chat service or submit any information through this Site. We require users to provide a date of birth during the support intake process. Age is calculated server-side; users identified as under 13 are blocked from proceeding, and no personal data from that session is stored.</p>
+            <p>If you are between 13 and 17 years of age, you may use this platform only with the knowledge and awareness of a parent or legal guardian. By using this Site, users aged 13–17 represent that a parent or guardian is aware of their use. Third-party data sharing via the live chat service is restricted for users under 18 — live chat is not available to minor users through the intake flow. SMS support and the community forum remain accessible.</p>
 
             <h2 id="acceptable-use">5. Acceptable Use</h2>
             <p>You agree not to use the Site or Services to:</p>
@@ -143,9 +143,6 @@ export default function TermsPage() {
             <h2 id="contact">15. Contact</h2>
             <p>Questions or concerns? Email us at <a href="mailto:projectreachplatform@gmail.com">projectreachplatform@gmail.com</a>.</p>
 
-            <p className="text-xs text-text-muted mt-8 pt-6 border-t border-border">
-              This document was drafted with AI assistance and should be reviewed by a licensed attorney before deployment.
-            </p>
 
             <a href="#main-content" className="inline-block mt-4 text-sm text-text-muted hover:text-primary transition-colors">↑ Back to top</a>
           </div>

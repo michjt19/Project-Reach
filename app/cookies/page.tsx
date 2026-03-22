@@ -203,9 +203,6 @@ export default function CookiesPage() {
             <h2 id="contact">9. Contact</h2>
             <p>Questions about our use of cookies? Email us at <a href="mailto:projectreachplatform@gmail.com">projectreachplatform@gmail.com</a>.</p>
 
-            <p className="text-xs text-text-muted mt-8 pt-6 border-t border-border">
-              This document was drafted with AI assistance and should be reviewed by a licensed attorney before deployment.
-            </p>
 
             <a href="#main-content" className="inline-block mt-4 text-sm text-text-muted hover:text-primary transition-colors">↑ Back to top</a>
           </div>

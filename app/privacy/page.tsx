@@ -63,7 +63,7 @@ export default function PrivacyPage() {
             <p className="text-sm text-text-muted mb-8">Effective Date: March 22, 2026 &nbsp;·&nbsp; Last Updated: March 22, 2026</p>
 
             <h2 id="who-we-are">1. Who We Are</h2>
-            <p>ReachCommunity (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the website located at thereachcommunity.com (the &ldquo;Site&rdquo;). We are a nonprofit peer support organization providing free, anonymous emotional support services. Questions regarding this Privacy Policy may be directed to: <a href="mailto:projectreachplatform@gmail.com">projectreachplatform@gmail.com</a>.</p>
+            <p>ReachCommunity (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the website located at thereachcommunity.com (the &ldquo;Site&rdquo;). We are a peer support organization providing free, anonymous emotional support services. Questions regarding this Privacy Policy may be directed to: <a href="mailto:projectreachplatform@gmail.com">projectreachplatform@gmail.com</a>.</p>
 
             <h2 id="scope">2. Scope of This Policy</h2>
             <p>This Policy describes how we collect, use, disclose, and retain information about individuals who visit the Site, use our services, or apply to volunteer. It does not govern the data practices of third-party services we link to or embed — those are governed by their respective privacy policies, which are referenced where applicable below.</p>
@@ -127,8 +127,10 @@ export default function PrivacyPage() {
             <p>Our platform is designed for mental health support. Information you share in chat sessions may constitute sensitive personal data under applicable law. We do not use chat content for any purpose other than facilitating your support session. We strongly discourage sharing sensitive personal identifiers — such as Social Security numbers, financial account numbers, or government-issued ID information — through our chat service.</p>
 
             <h2 id="children">7. Children&apos;s Privacy</h2>
-            <p><strong>Our services are not directed to children under the age of 13.</strong> Use of this platform by anyone under 13 is strictly prohibited. We require an affirmative age confirmation during the support intake process. We do not knowingly collect personal information from children under 13. If we become aware that we have inadvertently received information from a child under 13, we will take steps to delete that information.</p>
-            <p>Parents or guardians who believe their child under 13 has provided information through this platform may contact us at <a href="mailto:projectreachplatform@gmail.com">projectreachplatform@gmail.com</a> to request deletion. Users aged 13–17 may use the platform only with parental or guardian awareness, as described in our <Link href="/terms">Terms of Service</Link>.</p>
+            <p><strong>Our services are not directed to children under the age of 13.</strong> Use of this platform by anyone under 13 is strictly prohibited. We require users to provide a date of birth during the support intake process. Age is calculated server-side at the time of intake. Users identified as under 13 are blocked from proceeding, and no personal data from that session — including the date of birth entered — is stored, logged, or transmitted to any third party.</p>
+            <p>We do not knowingly collect personal information from users under 13. If we become aware that personal information has been submitted by a user later identified as under 13, we will take prompt steps to delete that information.</p>
+            <p>Users aged 13–17 are classified as minor accounts. Third-party data sharing via the Tawk.to live chat service is restricted for minor-flagged sessions — live chat is not available to users under 18 through the intake flow. Minor users may still access SMS support and the community forum. Users aged 13–17 may use the platform only with parental or guardian awareness, as described in our <Link href="/terms">Terms of Service</Link>.</p>
+            <p>Parents or guardians who believe their child under 13 has provided information through this platform may contact us at <a href="mailto:projectreachplatform@gmail.com">projectreachplatform@gmail.com</a> to request deletion.</p>
 
             <h2 id="retention">8. Data Retention</h2>
             <ul>
@@ -163,9 +165,6 @@ export default function PrivacyPage() {
             Email: <a href="mailto:projectreachplatform@gmail.com">projectreachplatform@gmail.com</a><br />
             Website: <a href="https://www.thereachcommunity.com">thereachcommunity.com</a></p>
 
-            <p className="text-xs text-text-muted mt-8 pt-6 border-t border-border">
-              This document was drafted with AI assistance and should be reviewed by a licensed attorney before deployment.
-            </p>
 
             <a href="#main-content" className="inline-block mt-4 text-sm text-text-muted hover:text-primary transition-colors">↑ Back to top</a>
           </div>
