@@ -5,6 +5,7 @@ import Script from "next/script";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import CookieConsent from "@/components/ui/CookieConsent";
+import { buildMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -23,8 +24,11 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.thereachcommunity.com'),
-  title: "Project Reach",
-  description: "Free peer support online",
+  ...buildMetadata({
+    title: 'Project Reach | Free Peer Support',
+    description: 'Free, anonymous peer support via live chat and SMS. No waitlist, no cost — real humans who care.',
+    canonical: 'https://www.thereachcommunity.com',
+  }),
 };
 
 export default function RootLayout({
