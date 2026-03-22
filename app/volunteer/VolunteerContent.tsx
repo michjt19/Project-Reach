@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 
 const STEPS = ['About You', 'Your Story', 'Finish Up']
@@ -44,6 +44,7 @@ export default function VolunteerContent() {
 
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
+  const honeypotRef = useRef<HTMLInputElement>(null)
 
   async function submit(e: React.FormEvent) {
     e.preventDefault()
@@ -61,6 +62,7 @@ export default function VolunteerContent() {
           why: form.why,
           experience: form.experience,
           availability: form.availability,
+          website: honeypotRef.current?.value ?? '',
         }),
       })
       if (!res.ok) throw new Error('Submission failed')
@@ -146,6 +148,11 @@ export default function VolunteerContent() {
               </div>
 
               <form onSubmit={submit} noValidate>
+                {/* Honeypot — invisible to real users; bots fill it in */}
+                <div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input ref={honeypotRef} id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+                </div>
 
                 {/* Step 1 */}
                 {step === 1 && (

@@ -23,7 +23,7 @@ export function buildMetadata({
       description,
       url: canonical,
       siteName: 'Project Reach',
-      images: ogImage ? [{ url: ogImage }] : [{ url: '/og-image.jpg' }],
+      images: ogImage ? [{ url: ogImage, width: 1200, height: 630 }] : [{ url: '/og-image.jpg', width: 1200, height: 630 }],
       type: 'website',
     },
     twitter: {

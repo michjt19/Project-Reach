@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.thereachcommunity.com/about</loc><changefreq>daily</changefreq><priority>1</priority></url>
-<url><loc>https://www.thereachcommunity.com/faq</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.thereachcommunity.com/get-support</loc><changefreq>daily</changefreq><priority>1</priority></url>
-<url><loc>https://www.thereachcommunity.com/donate</loc><changefreq>daily</changefreq><priority>1</priority></url>
-<url><loc>https://www.thereachcommunity.com/resources</loc><changefreq>daily</changefreq><priority>1</priority></url>
 <url><loc>https://www.thereachcommunity.com/community</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.thereachcommunity.com/faq</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.thereachcommunity.com/intake</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.thereachcommunity.com/code-of-conduct</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://www.thereachcommunity.com/blog/free-mental-health-resources-without-insurance</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://www.thereachcommunity.com/blog/how-to-talk-about-mental-health</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://www.thereachcommunity.com/blog/signs-you-need-someone-to-talk-to</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://www.thereachcommunity.com/blog/what-is-peer-support</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://www.thereachcommunity.com/blog/what-to-expect-from-online-peer-support</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.thereachcommunity.com</loc><changefreq>daily</changefreq><priority>1</priority></url>
-<url><loc>https://www.thereachcommunity.com/volunteer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.thereachcommunity.com/intake</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.thereachcommunity.com/get-support</loc><changefreq>daily</changefreq><priority>1</priority></url>
 <url><loc>https://www.thereachcommunity.com/privacy</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.thereachcommunity.com/terms</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.thereachcommunity.com/impact</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.thereachcommunity.com/team</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.thereachcommunity.com/resources</loc><changefreq>daily</changefreq><priority>1</priority></url>
 <url><loc>https://www.thereachcommunity.com/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.thereachcommunity.com/code-of-conduct</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.thereachcommunity.com/terms</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.thereachcommunity.com/volunteer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.thereachcommunity.com</loc><changefreq>daily</changefreq><priority>1</priority></url>
+<url><loc>https://www.thereachcommunity.com/team</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.thereachcommunity.com/about</loc><changefreq>daily</changefreq><priority>1</priority></url>
+<url><loc>https://www.thereachcommunity.com/impact</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

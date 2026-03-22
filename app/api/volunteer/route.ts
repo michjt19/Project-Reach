@@ -9,6 +9,7 @@ interface VolunteerPayload {
   why: string
   experience?: string
   availability: string
+  website?: string  // honeypot — must be empty for real submissions
 }
 
 function isValidEmail(email: string) {
@@ -23,7 +24,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
   }
 
-  const { name, email, why, experience, availability } = body
+  const { name, email, why, experience, availability, website } = body
+
+  // Honeypot — bots fill hidden fields; real users leave them empty
+  if (website) {
+    return NextResponse.json({ ok: true })
+  }
 
   if (!name?.trim() || !email?.trim() || !why?.trim() || !availability?.trim()) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })

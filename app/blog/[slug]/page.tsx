@@ -66,6 +66,11 @@ export default async function BlogPostPage({ params }: Props) {
     headline: title,
     description: excerpt,
     datePublished: publishedAt,
+    author: {
+      '@type': 'Organization',
+      name: 'Project Reach',
+      url: 'https://www.thereachcommunity.com',
+    },
     publisher: {
       '@type': 'Organization',
       name: 'Project Reach',
