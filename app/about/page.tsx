@@ -52,8 +52,7 @@ export default function AboutPage() {
         <section className="bg-primary text-white py-20 px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">We believe no one should feel alone in their hardest moments.</h1>
-            <h2 className="text-xl font-normal mb-4 opacity-90">Free Mental Health Peer Support — Filling the Gap Between Crisis Lines and Clinical Care</h2>
-            <p className="text-lg opacity-80">Project Reach exists to fill the space between clinical care and crisis lines — with human warmth, presence, and zero red tape.</p>
+            <p className="text-lg opacity-80 max-w-xl mx-auto">Free peer support with human warmth and zero red tape — filling the space between crisis lines and clinical care.</p>
           </div>
         </section>
 

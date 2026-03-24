@@ -61,11 +61,8 @@ export default function HomePage() {
         {/* Hero */}
         <section className="bg-primary text-white py-20 px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <span className="inline-block text-sm font-semibold uppercase tracking-widest opacity-80 mb-4">Free Peer Support</span>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-3">Free Peer Support — Talk to Someone Now</h1>
-            <p className="text-xl opacity-90 mb-2">You don&apos;t have to go through this alone.</p>
-            <p className="text-lg font-normal opacity-80 mb-6">Free Peer Support &amp; Live Mental Health Chat — No Waitlist, No Cost</p>
-            <p className="text-lg opacity-75 mb-8 max-w-xl mx-auto">Project Reach connects you with a caring volunteer listener — no judgment, no diagnosis, no waitlist.</p>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">You don&apos;t have to go through this alone.</h1>
+            <p className="text-lg opacity-80 mb-8 max-w-xl mx-auto">Project Reach connects you with a caring volunteer listener — free, anonymous, no waitlist.</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/get-support" className="inline-block bg-accent text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity">
                 💬 Get Support Now

@@ -47,37 +47,6 @@ export default function Footer() {
               A quiet place to be heard. Peer support for emotional well-being —
               no judgment, no waitlists.
             </p>
-
-            {/* Social links */}
-            <div className="flex gap-4 mt-4">
-              <a
-                href="https://www.tiktok.com/@thereachcommunity"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok — @thereachcommunity"
-                className="text-text-muted hover:text-primary transition-colors duration-150 text-sm"
-              >
-                TikTok
-              </a>
-              <a
-                href="https://www.facebook.com/people/The-Reach-Community/61580683322402/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook — The Reach Community"
-                className="text-text-muted hover:text-primary transition-colors duration-150 text-sm"
-              >
-                Facebook
-              </a>
-              <a
-                href="https://www.instagram.com/the_reach_community/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram — @the_reach_community"
-                className="text-text-muted hover:text-primary transition-colors duration-150 text-sm"
-              >
-                Instagram
-              </a>
-            </div>
           </div>
 
           {/* Nav columns */}
